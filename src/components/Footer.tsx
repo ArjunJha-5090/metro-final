@@ -1,5 +1,5 @@
 import React from 'react';
-import { UtensilsCrossed, Camera, Globe, MessageCircle } from 'lucide-react';
+import {Camera, Globe, MessageCircle } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -9,9 +9,6 @@ export const Footer: React.FC = () => {
           {/* Brand Info */}
           <div className="col-span-1 lg:col-span-1">
             <div className="flex items-center gap-2 mb-6">
-              <div className="p-2 bg-white/10 rounded-full text-accent">
-                <UtensilsCrossed className="w-6 h-6" />
-              </div>
               <span className="font-heading font-bold text-2xl tracking-wide text-white">
                 Metro Food Court
               </span>

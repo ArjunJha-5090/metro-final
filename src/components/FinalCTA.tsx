@@ -31,7 +31,7 @@ export const FinalCTA: React.FC = () => {
           <Button 
             size="lg" 
             icon={MapPin} 
-            className="w-full sm:w-auto bg-white text-secondary hover:bg-orange-50 focus:ring-white"
+            className="w-full sm:w-auto bg-primary text-white border-none hover:bg-orange-50 focus:ring-primary shadow-lg transition-colors duration-300"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Get Directions
