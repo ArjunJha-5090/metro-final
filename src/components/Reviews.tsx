@@ -30,8 +30,8 @@ export const Reviews: React.FC = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading 
-          title="What Our Visitors Say" 
-          subtitle="Don't just take our word for it. Read what our beloved customers have experienced."
+          title="What Our Customers Say" 
+          subtitle="Real experiences from our valued guests."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">

@@ -1,27 +1,21 @@
 import React from 'react';
 import { SectionHeading } from './ui/SectionHeading';
-import { Users, Sparkles, MapPin, Utensils } from 'lucide-react';
+import { Sparkles, Utensils } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Button } from './ui/Button';
 
 export const About: React.FC = () => {
+  const navigate = useNavigate();
+  
   const features = [
-    {
-      icon: Users,
-      title: 'Family Friendly',
-      description: 'Lorem ipsum dolor sit amet consectetur adipiscing.',
-    },
     {
       icon: Sparkles,
       title: 'Hygienic Environment',
       description: 'Sed do eiusmod tempor incididunt ut labore.',
     },
     {
-      icon: MapPin,
-      title: 'Prime Location',
-      description: 'Ut enim ad minim veniam quis nostrud exercitation.',
-    },
-    {
       icon: Utensils,
-      title: 'Diverse Cuisine',
+      title: 'Authentic Flavour',
       description: 'Duis aute irure dolor in reprehenderit in voluptate.',
     },
   ];
@@ -49,16 +43,16 @@ export const About: React.FC = () => {
           {/* Content Side */}
           <div>
             <SectionHeading 
-              title="About Metro Food Court" 
-              subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              title="Welcome to Metro Food Court" 
+              subtitle="Where tradition meets modern culinary excellence in the heart of Lucknow."
               centered={false}
             />
             
-            <p className="text-text/80 text-lg mb-10 leading-relaxed">
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <p className="text-text/80 text-lg mb-8 leading-relaxed">
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
               {features.map((feature, index) => (
                 <div key={index} className="flex gap-4">
                   <div className="flex-shrink-0 mt-1">
@@ -78,7 +72,9 @@ export const About: React.FC = () => {
               ))}
             </div>
             
-            {/* Signature or extra Indian design element could go here */}
+            <Button size="lg" variant="outline" onClick={() => navigate('/about')}>
+              Read Our Full Story
+            </Button>
           </div>
 
         </div>

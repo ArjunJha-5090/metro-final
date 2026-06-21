@@ -8,8 +8,8 @@ export const Contact: React.FC = () => {
     <section id="contact" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading 
-          title="Contact Us" 
-          subtitle="Have questions or want to make a reservation? We'd love to hear from you."
+          title="Get In Touch" 
+          subtitle="We'd love to hear from you. Here's how you can reach us."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-12">

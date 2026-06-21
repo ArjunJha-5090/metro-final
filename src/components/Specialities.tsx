@@ -15,8 +15,8 @@ export const Specialities: React.FC = () => {
     <section id="specialities" className="py-24 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading 
-          title="Explore Our Specialities" 
-          subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore."
+          title="Metro Specialities" 
+          subtitle="Discover the most loved and highly recommended dishes across our entire food court."
         />
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">

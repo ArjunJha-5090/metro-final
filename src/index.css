@@ -5,6 +5,9 @@
 @layer base {
   body {
     @apply bg-background text-text font-sans antialiased;
+    /* Add a very subtle traditional mandala/arabesque watermark to the whole body */
+    background-image: url("https://www.transparenttextures.com/patterns/arabesque.png");
+    background-color: #FFF8F0; /* Fallback to background color */
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -15,11 +18,24 @@
 @layer components {
   /* Generic Indian Design Accents */
   .indian-divider {
-    @apply w-full max-w-md mx-auto my-8 h-1 bg-gradient-to-r from-transparent via-accent to-transparent opacity-50 rounded-full;
+    @apply w-full max-w-md mx-auto my-8 h-1 bg-gradient-to-r from-transparent via-accent to-transparent opacity-70 rounded-full;
+    position: relative;
+  }
+  
+  .indian-divider::after {
+    content: "◆";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #D4AF37; /* accent */
+    font-size: 1.2rem;
+    background-color: #FFF8F0;
+    padding: 0 10px;
   }
   
   .premium-card {
-    @apply bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 border border-amber-50/50 overflow-hidden;
+    @apply bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 border border-accent/20 overflow-hidden;
   }
   
   .premium-hover {
