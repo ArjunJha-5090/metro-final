@@ -19,6 +19,7 @@ export const Navbar: React.FC = () => {
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Food Stalls', href: '/stalls' },
+    { name: 'Banquets', href: '/banquets' },
     { name: 'Specialities', href: '/#specialities' },
     { name: 'Gallery', href: '/gallery' },
     { name: 'Events', href: '/events' },
@@ -36,13 +37,20 @@ export const Navbar: React.FC = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center gap-2">
-            <Link to="/" className={`font-heading font-bold text-2xl tracking-wide ${isScrolled || location.pathname !== '/' ? 'text-secondary' : 'text-white'}`}>
-              Metro Food Court
+            <Link to="/" className="flex items-center gap-2.5 group">
+              <img 
+                src="/assets/images/logo.png" 
+                alt="Metro Food Court Logo" 
+                className="h-10 w-10 object-contain rounded-full border border-accent/20 group-hover:scale-105 transition-transform duration-200"
+              />
+              <span className={`font-heading font-bold text-2xl tracking-wide transition-colors duration-300 ${isScrolled || location.pathname !== '/' ? 'text-secondary' : 'text-white'}`}>
+                Metro Food Court
+              </span>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-4 lg:space-x-6">
             {navLinks.map((link) => (
               <a
                 key={link.name}

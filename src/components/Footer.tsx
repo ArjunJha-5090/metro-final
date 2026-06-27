@@ -8,7 +8,12 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand Info */}
           <div className="col-span-1 lg:col-span-1">
-            <div className="flex items-center gap-2 mb-6">
+            <div className="flex items-center gap-3 mb-6">
+              <img 
+                src="/assets/images/logo.png" 
+                alt="Metro Food Court Logo" 
+                className="h-14 w-14 object-contain rounded-full border border-white/20"
+              />
               <span className="font-heading font-bold text-2xl tracking-wide text-white">
                 Metro Food Court
               </span>
@@ -37,6 +42,7 @@ export const Footer: React.FC = () => {
                 { name: 'Home', href: '/' },
                 { name: 'About Us', href: '/about' },
                 { name: 'Food Stalls', href: '/stalls' },
+                { name: 'Banquets', href: '/banquets' },
                 { name: 'Gallery', href: '/gallery' },
                 { name: 'Contact Us', href: '/#contact' }
               ].map((link) => (

@@ -7,6 +7,7 @@ import { AboutPage } from './pages/AboutPage';
 import { FoodStallsPage } from './pages/FoodStallsPage';
 import { EventsPage } from './pages/EventsPage';
 import { GalleryPage } from './pages/GalleryPage';
+import { BanquetsPage } from './pages/BanquetsPage';
 
 function ScrollToHashElement() {
   const { hash, pathname } = useLocation();
@@ -47,6 +48,7 @@ function App() {
             <Route path="/stalls" element={<FoodStallsPage />} />
             <Route path="/events" element={<EventsPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/banquets" element={<BanquetsPage />} />
           </Routes>
         </main>
 

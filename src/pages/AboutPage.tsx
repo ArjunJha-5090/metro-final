@@ -25,7 +25,12 @@ export const AboutPage: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Hero Section of About Page */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 flex flex-col items-center">
+          <img 
+            src="/assets/images/logo.png" 
+            alt="Metro Food Court Logo" 
+            className="w-24 h-24 object-contain rounded-full border-2 border-accent/30 shadow-md mb-6 animate-fade-in"
+          />
           <span className="inline-block py-1 px-3 rounded-full bg-accent/20 text-accent border border-accent/30 text-sm font-medium tracking-wider uppercase mb-4">
             Our Heritage
           </span>
