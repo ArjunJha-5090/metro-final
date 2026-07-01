@@ -590,27 +590,18 @@ export const BanquetsPage: React.FC = () => {
 
                 {/* Dropdown items reveal container (Hover Reveal with slide & fade animation) */}
                 <div className="overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0 group-hover:max-h-[800px] group-hover:opacity-100 group-hover:mt-6">
-                  <div className="pt-4 border-t border-accent/15 flex flex-col gap-4 transform translate-y-[-10px] group-hover:translate-y-0 transition-transform duration-500">
+                  <div className="pt-4 border-t border-accent/15 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 transform translate-y-[-10px] group-hover:translate-y-0 transition-transform duration-500">
                     {category.items.map((item, itemIdx) => (
-                      <div key={itemIdx} className="flex gap-3 items-start justify-between group/item p-2 rounded-lg hover:bg-orange-50/50 transition-colors">
-                        <div className="flex-grow">
-                          <div className="flex items-center gap-2">
-                            <FoodSymbol isVeg={item.isVeg} />
-                            <h4 className="font-sans font-semibold text-text text-sm group-hover/item:text-primary transition-colors">
-                              {item.name}
-                            </h4>
-                            {item.badge && (
-                              <span className="text-[9px] font-semibold bg-accent/20 text-secondary border border-accent/30 rounded-full px-2 py-0.5 uppercase tracking-wider">
-                                {item.badge}
-                              </span>
-                            )}
-                          </div>
-                          {item.description && (
-                            <p className="text-text/60 text-xs mt-1 leading-normal pl-6">
-                              {item.description}
-                            </p>
-                          )}
-                        </div>
+                      <div key={itemIdx} className="flex gap-2 items-center group/item p-1.5 rounded-lg hover:bg-orange-50/50 transition-colors">
+                        <FoodSymbol isVeg={item.isVeg} />
+                        <span className="font-sans font-semibold text-text text-sm group-hover/item:text-primary transition-colors leading-tight">
+                          {item.name}
+                        </span>
+                        {item.badge && (
+                          <span className="text-[8px] font-semibold bg-accent/20 text-secondary border border-accent/30 rounded-full px-1.5 py-0.5 uppercase tracking-wider whitespace-nowrap">
+                            {item.badge}
+                          </span>
+                        )}
                       </div>
                     ))}
                   </div>

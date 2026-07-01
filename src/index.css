@@ -4,43 +4,42 @@
 
 @layer base {
   body {
-    @apply bg-background text-text font-sans antialiased;
-    /* Add a very subtle traditional mandala/arabesque watermark to the whole body */
-    background-image: url("https://www.transparenttextures.com/patterns/arabesque.png");
-    background-color: #FFF8F0; /* Fallback to background color */
+    @apply bg-background text-text font-sans antialiased selection:bg-accent selection:text-secondary;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading text-secondary;
+    @apply font-heading uppercase tracking-wide;
   }
 }
 
 @layer components {
-  /* Generic Indian Design Accents */
-  .indian-divider {
-    @apply w-full max-w-md mx-auto my-8 h-1 bg-gradient-to-r from-transparent via-accent to-transparent opacity-70 rounded-full;
-    position: relative;
+  .brutal-card {
+    @apply bg-white border-4 border-secondary shadow-brutal transition-transform duration-200;
   }
   
-  .indian-divider::after {
-    content: "◆";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #D4AF37; /* accent */
-    font-size: 1.2rem;
-    background-color: #FFF8F0;
-    padding: 0 10px;
+  .brutal-hover {
+    @apply hover:-translate-y-1 hover:translate-x-[-1px] hover:shadow-brutal-lg active:translate-y-1 active:translate-x-1 active:shadow-none transition-all duration-150;
   }
   
-  .premium-card {
-    @apply bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 border border-accent/20 overflow-hidden;
+  .brutal-border {
+    @apply border-4 border-secondary;
   }
-  
-  .premium-hover {
-    @apply hover:-translate-y-1 transition-transform duration-300;
-  }
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 15s linear infinite;
+  display: flex;
+  white-space: nowrap;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
 
 /* Base custom styles to clear out Vite default styles */
