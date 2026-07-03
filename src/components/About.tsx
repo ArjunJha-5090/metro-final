@@ -29,8 +29,8 @@ export const About: React.FC = () => {
           <div className="relative">
             <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative z-10">
               <img 
-                src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=1974" 
-                alt="Metro Food Court Ambience" 
+                src="/assets/images/image.png" 
+                alt="Birthday Party Setup at Metro Food Court" 
                 className="w-full h-full object-cover"
               />
             </div>

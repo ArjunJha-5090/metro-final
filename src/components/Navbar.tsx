@@ -20,15 +20,13 @@ export const Navbar: React.FC = () => {
     { name: 'About', href: '/about' },
     { name: 'Food Stalls', href: '/stalls' },
     { name: 'Banquets', href: '/banquets' },
-    { name: 'Specialities', href: '/#specialities' },
-    { name: 'Gallery', href: '/gallery' },
     { name: 'Events', href: '/events' },
-    { name: 'Reviews', href: '/#reviews' },
-    { name: 'Contact', href: '/#contact' },
+    { name: 'Gallery', href: '/gallery' },
+    { name: 'Blog', href: '/blog' },
   ];
 
   const isHomePage = location.pathname === '/';
-  const headerBg = isScrolled || !isHomePage ? 'bg-background border-b-4 border-secondary shadow-brutal' : 'bg-transparent border-b-4 border-transparent';
+  const headerBg = isScrolled || !isHomePage ? 'bg-background border-b border-accent/20 shadow-premium' : 'bg-transparent border-b border-transparent';
   const textColor = isScrolled || !isHomePage ? 'text-secondary' : 'text-background';
 
   return (
@@ -38,11 +36,10 @@ export const Navbar: React.FC = () => {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center gap-2">
             <Link to="/" className="flex items-center gap-2 group">
-              {/* Optional logo image if they want it, else just text. Let's keep it but make it fit */}
-              <div className="h-10 w-10 bg-primary border-2 border-secondary rounded-full flex items-center justify-center font-heading text-white text-xl shadow-brutal-sm group-hover:bg-accent group-hover:-translate-y-1 transition-all">
+              <div className="h-10 w-10 bg-primary border border-accent/50 rounded-full flex items-center justify-center font-heading text-background text-xl shadow-premium group-hover:bg-accent group-hover:text-primary group-hover:-translate-y-1 transition-all">
                 MF
               </div>
-              <span className={`font-heading uppercase font-bold text-3xl tracking-wider transition-colors duration-300 ${textColor}`}>
+              <span className={`font-heading uppercase font-normal text-3xl tracking-wider transition-colors duration-300 ${textColor}`}>
                 Metro Food
               </span>
             </Link>

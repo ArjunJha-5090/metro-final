@@ -42,6 +42,44 @@
   animation-play-state: paused;
 }
 
+/* Intricate Indian Divider */
+.indian-divider {
+  width: 100%;
+  max-width: 280px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C19B5E, transparent);
+  margin: 2.5rem auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.indian-divider::before {
+  content: '';
+  position: absolute;
+  width: 70%;
+  height: 1px;
+  top: -4px;
+  background: linear-gradient(90deg, transparent, rgba(193, 155, 94, 0.4), transparent);
+}
+.indian-divider::after {
+  content: '';
+  position: absolute;
+  width: 70%;
+  height: 1px;
+  bottom: -4px;
+  background: linear-gradient(90deg, transparent, rgba(193, 155, 94, 0.4), transparent);
+}
+.indian-divider-motif {
+  color: #8A2E28;
+  background: #FDFBF7; /* Match ivory background */
+  padding: 0 1rem;
+  z-index: 10;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
 /* Base custom styles to clear out Vite default styles */
 #root {
   width: 100%;

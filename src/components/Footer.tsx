@@ -43,8 +43,9 @@ export const Footer: React.FC = () => {
                 { name: 'About Us', href: '/about' },
                 { name: 'Food Stalls', href: '/stalls' },
                 { name: 'Banquets', href: '/banquets' },
+                { name: 'Events', href: '/events' },
                 { name: 'Gallery', href: '/gallery' },
-                { name: 'Contact Us', href: '/#contact' }
+                { name: 'Blog', href: '/blog' },
               ].map((link) => (
                 <li key={link.name}>
                   <a href={link.href} className="text-white/80 hover:text-accent transition-colors flex items-center gap-2">
