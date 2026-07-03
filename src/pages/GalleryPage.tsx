@@ -14,11 +14,11 @@ const galleryImages = [
 
 // Drop your video files into: public/assets/videos/
 const videos = [
-  { src: '/assets/videos/video1.mp4', title: 'Grand Opening Night — Metro Food Court' },
-  { src: '/assets/videos/video2.mp4', title: 'Behind the Scenes: Making of Our Dum Biryani' },
-  { src: '/assets/videos/video3.mp4', title: 'Holi Festival 2026 at Metro Food Court' },
-  { src: '/assets/videos/video4.mp4', title: 'A Day in the Life of Our Chai Master' },
-  { src: '/assets/videos/video5.mp4', title: 'Customer Testimonials & Food Court Tour' },
+  { src: '/assets/videos/video-1.mp4', title: 'Grand Opening Night — Metro Food Court' },
+  { src: '/assets/videos/video-2.mp4', title: 'Behind the Scenes: Making of Our Dum Biryani' },
+  { src: '/assets/videos/video-3.mp4', title: 'Holi Festival 2026 at Metro Food Court' },
+  { src: '/assets/videos/video-4.mp4', title: 'A Day in the Life of Our Chai Master' },
+  { src: '/assets/videos/video-5.mp4', title: 'Customer Testimonials & Food Court Tour' },
 ];
 
 export const GalleryPage: React.FC = () => {
