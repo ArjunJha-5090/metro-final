@@ -1,7 +1,7 @@
 import React from 'react';
 import { SectionHeading } from './ui/SectionHeading';
 import { Button } from './ui/Button';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
 
 export const Contact: React.FC = () => {
   return (
@@ -22,7 +22,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-heading font-semibold text-secondary mb-1">Location</h4>
-                  <p className="text-text/70 text-sm">Gyan Ganga Trade Centre,<br/>Lucknow, UP 226001</p>
+                  <p className="text-text/70 text-sm">Gyan Ganga Trade Centre,<br/>Chamanchak, Bypass,<br/>Patna - 27</p>
                 </div>
               </div>
               <div className="flex gap-4">
@@ -109,6 +109,15 @@ export const Contact: React.FC = () => {
               <Button type="button" className="w-full mt-2">
                 Send Message
               </Button>
+              <a
+                href="https://api.whatsapp.com/send/?phone=919711240950"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full mt-3 flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-lg bg-[#25D366] hover:bg-[#1ebe5d] text-white font-semibold text-base transition-colors duration-200 shadow-sm"
+              >
+                <MessageCircle className="w-5 h-5" />
+                Chat with us on WhatsApp
+              </a>
             </form>
           </div>
         </div>

@@ -57,9 +57,12 @@ export const Hero: React.FC = () => {
           {/* Main Hero Image in a Brutalist Card */}
           <div className="relative z-10 border-4 border-secondary bg-white p-2 shadow-brutal-lg rotate-[3deg] transition-transform hover:rotate-0 duration-300">
             <img 
-              src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&q=80&w=1000" 
+              src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&q=80&w=900" 
               alt="Epic Burger" 
               className="w-full h-auto object-cover border-2 border-secondary"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
             />
           </div>
           

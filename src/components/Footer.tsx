@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
               <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-accent hover:text-secondary transition-all duration-300">
                 <Globe className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-accent hover:text-secondary transition-all duration-300">
+              <a href="https://api.whatsapp.com/send/?phone=919711240950" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-accent hover:text-secondary transition-all duration-300">
                 <MessageCircle className="w-5 h-5" />
               </a>
             </div>
@@ -63,7 +63,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-4 text-white/80">
               <li>
                 <p className="font-medium text-white mb-1">Address</p>
-                <p>Gyan Ganga Trade Centre,<br />Lucknow, Uttar Pradesh</p>
+                <p>Gyan Ganga Trade Centre,<br />Chamanchak, Bypass,<br />Patna - 27</p>
               </li>
               <li>
                 <p className="font-medium text-white mb-1">Phone</p>
