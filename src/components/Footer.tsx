@@ -67,7 +67,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <p className="font-medium text-white mb-1">Phone</p>
-                <p>+91 (123) 456-7890</p>
+                <p>6287601908</p>
               </li>
               <li>
                 <p className="font-medium text-white mb-1">Email</p>
