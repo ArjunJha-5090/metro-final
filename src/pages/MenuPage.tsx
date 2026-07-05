@@ -320,31 +320,33 @@ export const MenuPage: React.FC = () => {
         </div>
 
         {/* ── Free delivery badge ── */}
-        <div className="flex justify-center mb-12">
-          <div className="inline-flex items-center gap-3 bg-primary text-white font-heading text-lg uppercase tracking-widest px-8 py-3 border-4 border-secondary shadow-[4px_4px_0px_#111] rotate-[-1deg]">
-            🚀 Free Home Delivery Available
+        <div className="flex justify-center mb-8 sm:mb-12">
+          <div className="inline-flex items-center gap-2 sm:gap-3 bg-primary text-white font-heading text-sm sm:text-lg uppercase tracking-widest px-5 sm:px-8 py-2.5 sm:py-3 border-4 border-secondary shadow-[4px_4px_0px_#111] rotate-[-1deg] text-center">
+            🚀 Free Home Delivery
           </div>
         </div>
 
         {/* ── Filter Tabs ── */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`px-5 py-2.5 rounded-full font-heading text-sm font-semibold uppercase tracking-wide transition-all duration-200 border-2 ${
-                activeTab === tab.id
-                  ? 'bg-primary text-white border-primary shadow-md'
-                  : 'bg-white text-secondary border-secondary/20 hover:border-primary hover:text-primary'
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
+        <div className="-mx-4 px-4 overflow-x-auto scrollbar-none mb-8 sm:mb-12">
+          <div className="flex gap-2 pb-1 min-w-max sm:min-w-0 sm:flex-wrap sm:justify-center">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`flex-shrink-0 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full font-heading text-xs sm:text-sm font-semibold uppercase tracking-wide transition-all duration-200 border-2 ${
+                  activeTab === tab.id
+                    ? 'bg-primary text-white border-primary shadow-md'
+                    : 'bg-white text-secondary border-secondary/20 hover:border-primary hover:text-primary'
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* ── Grid ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5">
 
           {/* Indian Veg */}
           {showVeg && (

@@ -25,7 +25,7 @@ const reviews = [
 
 export const Reviews: React.FC = () => {
   return (
-    <section id="reviews" className="py-24 bg-white relative">
+    <section id="reviews" className="py-12 md:py-24 bg-white relative">
       <div className="absolute top-0 left-0 w-full h-1/2 bg-secondary/5 hidden md:block" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -34,9 +34,9 @@ export const Reviews: React.FC = () => {
           subtitle="Real experiences from our valued guests."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
           {reviews.map((review, index) => (
-            <div key={index} className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 relative pt-12">
+            <div key={index} className="bg-white p-5 md:p-8 rounded-2xl shadow-lg border border-gray-100 relative pt-12">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full border-4 border-white overflow-hidden shadow-md">
                 <img src={review.photo} alt={review.name} className="w-full h-full object-cover" />
               </div>

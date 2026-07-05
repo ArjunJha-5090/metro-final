@@ -17,7 +17,7 @@ export const Gallery: React.FC = () => {
   const previewImages = galleryImages.slice(0, 3);
 
   return (
-    <section id="gallery" className="py-24 bg-white">
+    <section id="gallery" className="py-12 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading 
           title="Food Gallery" 
@@ -25,7 +25,7 @@ export const Gallery: React.FC = () => {
         />
 
         {/* Masonry-style Grid (CSS Columns approximation) */}
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6 mb-12">
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 md:gap-6 space-y-4 md:space-y-6 mb-10">
           {previewImages.map((src, index) => (
             <div key={index} className="break-inside-avoid relative group overflow-hidden rounded-xl shadow-sm hover:shadow-lg transition-all duration-300">
               <img 

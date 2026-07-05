@@ -7,10 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#8A2E28', // Deep Crimson / Maroon
-        secondary: '#1C1816', // Rich Dark Roast
-        accent: '#C19B5E', // Antique Gold
-        background: '#FDFBF7', // Premium Ivory
+        primary: '#8A2E28', 
+        secondary: '#1C1816', 
+        accent: '#C19B5E', 
+        background: '#FDFBF7', // Premium Ivory — NOTE: actual bg controlled by --color-bg in index.css
         surface: '#FFFFFF', // Pure Surface
         text: '#332925', // Soft Dark Grey/Brown
         saffron: '#D47029', // Muted Saffron

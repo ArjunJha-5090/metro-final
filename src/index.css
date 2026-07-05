@@ -3,13 +3,23 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-bg: #ff00001a;   /* ← change bg here — very light red tint */
+  }
+
   body {
-    @apply bg-background text-text font-sans antialiased selection:bg-accent selection:text-secondary;
+    background-color: var(--color-bg);
+    @apply text-text font-sans antialiased selection:bg-accent selection:text-secondary;
   }
   
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading uppercase tracking-wide;
   }
+}
+
+/* Force .bg-background to always use the CSS variable — overrides Tailwind's compiled value */
+.bg-background {
+  background-color: var(--color-bg) !important;
 }
 
 @layer components {
@@ -72,7 +82,7 @@
 }
 .indian-divider-motif {
   color: #8A2E28;
-  background: #FDFBF7; /* Match ivory background */
+  background: var(--color-bg); /* Always matches :root --color-bg */
   padding: 0 1rem;
   z-index: 10;
   display: flex;
@@ -88,3 +98,18 @@
   max-width: 100vw;
   overflow-x: hidden;
 }
+
+/* Fast tap on mobile — removes 300ms delay */
+button, a {
+  touch-action: manipulation;
+}
+
+/* Hide scrollbar for horizontal scroll containers */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+

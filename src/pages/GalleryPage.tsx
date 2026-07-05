@@ -23,7 +23,7 @@ const videos = [
 
 export const GalleryPage: React.FC = () => {
   return (
-    <div className="pt-24 pb-24 bg-background min-h-screen relative">
+    <div className="pt-20 md:pt-24 pb-12 md:pb-24 bg-background min-h-screen relative">
       <div className="absolute inset-0 bg-indian-pattern opacity-[0.02] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -34,7 +34,7 @@ export const GalleryPage: React.FC = () => {
           subtitle="Immerse yourself in the Metro Food Court experience through our diverse collection of moments."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[200px] mt-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 auto-rows-[140px] md:auto-rows-[200px] mt-8 md:mt-12">
           {galleryImages.map((image, index) => (
             <div
               key={index}

@@ -5,7 +5,7 @@ import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
 
 export const Contact: React.FC = () => {
   return (
-    <section id="contact" className="py-24 bg-white">
+    <section id="contact" className="py-12 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading 
           title="Get In Touch" 
@@ -15,7 +15,7 @@ export const Contact: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-12">
           {/* Contact Info & Map */}
           <div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
               <div className="flex gap-4">
                 <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                   <MapPin className="w-5 h-5" />

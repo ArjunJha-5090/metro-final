@@ -54,7 +54,7 @@ export const FoodStalls: React.FC = () => {
   const previewStalls = stalls.slice(0, 3);
 
   return (
-    <section id="stalls" className="py-24 bg-white relative">
+    <section id="stalls" className="py-12 md:py-24 bg-white relative">
       {/* Subtle traditional pattern background overlay could go here */}
       <div className="absolute inset-0 opacity-[0.02] bg-[url('https://www.transparenttextures.com/patterns/arabesque.png')] pointer-events-none" />
       
@@ -64,7 +64,7 @@ export const FoodStalls: React.FC = () => {
           subtitle="Explore a diverse range of culinary delights brought to you by our premium vendors."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
           {previewStalls.map((stall, index) => (
             <div key={index} className="premium-card premium-hover group flex flex-col">
               <div className="relative h-56 overflow-hidden">

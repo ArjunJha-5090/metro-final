@@ -30,14 +30,14 @@ export const Events: React.FC = () => {
   const previewEvents = events.slice(0, 3);
 
   return (
-    <section id="events" className="py-24 bg-background">
+    <section id="events" className="py-12 md:py-24 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading 
           title="Events & Celebrations" 
           subtitle="Join us for special occasions and create unforgettable memories with your loved ones."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-10 mb-10">
           {previewEvents.map((event, index) => (
             <div key={index} className="premium-card premium-hover flex flex-col group">
               <div className="relative h-48 overflow-hidden">
