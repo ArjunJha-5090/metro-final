@@ -44,7 +44,7 @@ export const Navbar: React.FC = () => {
     { name: 'About', href: '/about' },
     { name: 'Food Stalls', href: '/stalls' },
     { name: 'Menu', href: '/menu' },
-    { name: 'Banquets', href: '/banquets' },
+    { name: 'Banquets & Catering', href: '/banquets' },
     { name: 'Gallery', href: '/gallery' },
     { name: 'FAQ', href: '/faq' },
     { name: 'Blog', href: '/blog' },

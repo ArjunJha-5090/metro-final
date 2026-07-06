@@ -45,7 +45,7 @@ export const Footer: React.FC = () => {
                 { name: 'About Us', href: '/about' },
                 { name: 'Menu', href: '/menu' },
                 { name: 'Food Stalls', href: '/stalls' },
-                { name: 'Banquets', href: '/banquets' },
+                { name: 'Banquets & Catering', href: '/banquets' },
                 { name: 'Events', href: '/events' },
                 { name: 'Gallery', href: '/gallery' },
                 { name: 'Blog', href: '/blog' },
