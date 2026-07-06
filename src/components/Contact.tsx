@@ -80,7 +80,7 @@ export const Contact: React.FC = () => {
                   type="text" 
                   id="name" 
                   className="w-full px-4 py-3 rounded-xl border-2 border-accent/20 bg-white focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all shadow-sm font-medium"
-                  placeholder="John Doe"
+                  placeholder="Your full name"
                 />
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -90,7 +90,7 @@ export const Contact: React.FC = () => {
                     type="email" 
                     id="email" 
                     className="w-full px-4 py-3 rounded-xl border-2 border-accent/20 bg-white focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all shadow-sm font-medium"
-                    placeholder="john@example.com"
+                    placeholder="Your email address"
                   />
                 </div>
                 <div>
@@ -99,7 +99,7 @@ export const Contact: React.FC = () => {
                     type="tel" 
                     id="phone" 
                     className="w-full px-4 py-3 rounded-xl border-2 border-accent/20 bg-white focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all shadow-sm font-medium"
-                    placeholder="+91 98765 43210"
+                    placeholder="Your phone number"
                   />
                 </div>
               </div>
@@ -109,7 +109,7 @@ export const Contact: React.FC = () => {
                   id="message" 
                   rows={3}
                   className="w-full px-4 py-3 rounded-xl border-2 border-accent/20 bg-white focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all resize-none shadow-sm font-medium"
-                  placeholder="How can we help you?"
+                  placeholder="Write your message here..."
                 ></textarea>
               </div>
               <Button type="button" className="w-full mt-2">
