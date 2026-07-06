@@ -84,19 +84,23 @@ export const Navbar: React.FC = () => {
         </div>
       </header>
 
-      {/* ── Mobile Top Bar: Logo left + Hamburger right (below lg) ── */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-4 py-3 bg-white/90 backdrop-blur-md border-b border-orange-100 shadow-sm">
+      {/* ── Mobile Floating Logo (top-left) ── */}
+      <div className={`lg:hidden fixed top-3 left-3 z-[100] transition-transform duration-300 ${transformClass}`}>
         <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
           <img
             src="/assets/images/logo-transparent.png"
             alt="Metro Food Court"
-            className="h-12 w-auto object-contain"
+            className="h-14 w-auto object-contain drop-shadow-md"
           />
         </Link>
+      </div>
+
+      {/* ── Mobile Floating Hamburger (top-right) ── */}
+      <div className={`lg:hidden fixed top-4 right-4 z-[100] transition-transform duration-300 ${transformClass}`}>
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
-          className="w-11 h-11 flex items-center justify-center rounded-xl bg-orange-50 border-2 border-orange-200 text-secondary active:scale-95 transition-all duration-150"
+          className="w-11 h-11 flex items-center justify-center rounded-xl bg-white/80 backdrop-blur-sm border border-orange-200 text-secondary shadow-md active:scale-95 transition-all duration-150"
         >
           {isMobileMenuOpen
             ? <X className="w-6 h-6" strokeWidth={2.5} />
