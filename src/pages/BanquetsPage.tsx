@@ -528,8 +528,8 @@ export const BanquetsPage: React.FC = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-secondary mb-6">
             Grand Banquet Silver Menus
           </h1>
-          <p className="max-w-2xl text-text/80 text-lg leading-relaxed">
-            Crafting memorable catering experiences for your grand events, weddings, and parties. Select a package below and hover over categories to preview our exquisite items.
+          <p className="max-w-3xl text-text/80 text-lg leading-relaxed">
+            Crafting memorable experiences for Weddings, Birthday Parties, Corporate Events, and Anniversaries. Our menus are <strong className="text-primary font-semibold">fully customizable</strong> and available on-demand to perfectly suit your gathering. Select a package below and hover over categories to preview our exquisite items.
           </p>
           <div className="indian-divider mt-8 mb-0"></div>
         </div>
@@ -626,7 +626,7 @@ export const BanquetsPage: React.FC = () => {
               Outdoor Catering Services
             </h2>
             <p className="text-white/95 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
-              Bring the Metro Food Court experience to your chosen venue! From destination weddings to corporate galas and private parties, we provide complete luxury catering setups, interactive live counters, and impeccable hospitality anywhere you desire.
+              Bring the Metro Food Court experience to your chosen venue! We expertly arrange catering for Weddings, Birthday Parties, Corporate Galas, and private events. Enjoy complete luxury catering setups with <strong className="font-extrabold text-yellow-300">fully customizable, on-demand menus</strong> and impeccable hospitality anywhere you desire.
             </p>
           </div>
 
