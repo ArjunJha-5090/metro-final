@@ -508,32 +508,7 @@ export const BanquetsPage: React.FC = () => {
 
   return (
     <div className="pt-24 md:pt-32 pb-24 min-h-screen relative">
-      {/* Elegant Catering Announcement */}
-      <div className="px-4 sm:px-6 lg:px-8 mb-12 flex justify-center relative z-20">
-        <button
-          onClick={() => {
-            const element = document.getElementById('outdoor-catering');
-            if (element) {
-              const y = element.getBoundingClientRect().top + window.scrollY - 100;
-              window.scrollTo({ top: y, behavior: 'smooth' });
-            }
-          }}
-          className="group relative inline-flex items-center justify-center gap-3 px-6 py-3 sm:px-8 sm:py-4 bg-secondary text-white rounded-full overflow-hidden shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/30 border border-white/5"
-        >
-          {/* Subtle glow border pulse */}
-          <div className="absolute inset-[-1px] rounded-full border border-primary/40 animate-pulse pointer-events-none"></div>
-          
-          <Sparkles className="w-5 h-5 text-accent" />
-          <span className="font-heading font-semibold text-sm sm:text-base tracking-wide flex items-center gap-2">
-            Discover Our Premium Outdoor Catering
-            <span className="hidden sm:inline w-1.5 h-1.5 rounded-full bg-white/30 mx-2"></span>
-            <span className="text-accent group-hover:text-white transition-colors underline decoration-accent/50 underline-offset-4 hidden sm:inline">
-              Click to Explore
-            </span>
-          </span>
-          <ChevronDown className="w-5 h-5 text-accent group-hover:translate-y-1 transition-transform" />
-        </button>
-      </div>
+
 
       {/* Background patterns */}
       <div className="absolute inset-0 opacity-[0.02] bg-[url('https://www.transparenttextures.com/patterns/arabesque.png')] pointer-events-none mt-20" />
