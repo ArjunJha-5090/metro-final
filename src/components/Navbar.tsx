@@ -35,7 +35,7 @@ export const Navbar: React.FC = () => {
   // Only render on desktop (md and above) — completely invisible on mobile
   return (
     <header
-      className={`hidden md:flex fixed w-full top-0 z-50 transition-transform duration-300 bg-[#ffe6e6]/75 backdrop-blur-md border-b border-accent/20 shadow-sm py-2 ${transformClass}`}
+      className={`hidden lg:flex fixed w-full top-0 z-50 transition-transform duration-300 bg-[#ffe6e6]/75 backdrop-blur-md border-b border-accent/20 shadow-sm py-2 ${transformClass}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="flex justify-between items-center h-20">
