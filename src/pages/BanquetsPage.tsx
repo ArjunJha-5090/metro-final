@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Coffee, Flame, UtensilsCrossed, Soup, Sparkles, IceCream, ChevronDown } from 'lucide-react';
+import { Coffee, Flame, UtensilsCrossed, Soup, Sparkles, IceCream, ChevronDown, MessageCircle, Phone } from 'lucide-react';
 
 interface MenuItem {
   name: string;
@@ -507,7 +507,7 @@ export const BanquetsPage: React.FC = () => {
   const currentMenu = activeTab === 'veg' ? vegMenu : nonVegMenu;
 
   return (
-    <div className="pt-24 pb-24 min-h-screen relative">
+    <div className="pt-32 md:pt-40 pb-24 min-h-screen relative">
       {/* Background patterns */}
       <div className="absolute inset-0 opacity-[0.02] bg-[url('https://www.transparenttextures.com/patterns/arabesque.png')] pointer-events-none" />
       
@@ -620,17 +620,21 @@ export const BanquetsPage: React.FC = () => {
               Whether you need customized menus, extra live stalls, or structural setups, our team handles it all with perfection. Reach out to schedule a testing session or book the venue.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <a 
-                href="/#contact" 
-                className="inline-flex items-center justify-center px-8 py-3.5 border border-transparent text-base font-semibold rounded-lg shadow-sm text-white bg-primary hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors duration-200"
+              <a
+                href="https://api.whatsapp.com/send/?phone=916287601908"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 border border-transparent text-base font-semibold rounded-lg shadow-sm text-white bg-[#25D366] hover:bg-[#1ebe5d] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#25D366] transition-colors duration-200"
               >
-                Inquire & Book
+                <MessageCircle className="w-5 h-5" />
+                WhatsApp Us
               </a>
               <a 
-                href="tel:+911234567890" 
-                className="inline-flex items-center justify-center px-8 py-3.5 border border-secondary text-base font-semibold rounded-lg text-secondary bg-white hover:bg-secondary/5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary transition-colors duration-200"
+                href="tel:+916287601908" 
+                className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 border border-secondary text-base font-semibold rounded-lg text-secondary bg-white hover:bg-secondary/5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary transition-colors duration-200"
               >
-                Call Event Coordinator
+                <Phone className="w-5 h-5" />
+                Call Directly
               </a>
             </div>
           </div>

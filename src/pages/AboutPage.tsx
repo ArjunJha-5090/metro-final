@@ -61,7 +61,7 @@ export const AboutPage: React.FC = () => {
   ];
 
   return (
-    <div className="pt-24 pb-24 min-h-screen relative overflow-hidden bg-background">
+    <div className="pt-32 md:pt-40 pb-24 min-h-screen relative overflow-hidden bg-background">
       {/* Subtle textured background */}
       <div className="absolute inset-0 bg-indian-pattern opacity-[0.02] mix-blend-multiply pointer-events-none z-0"></div>
 
@@ -106,8 +106,8 @@ export const AboutPage: React.FC = () => {
               <CornerFiligree className="top-0 left-0" />
               <CornerFiligree className="top-0 right-0 scale-x-[-1]" />
               <img 
-                src="https://images.unsplash.com/photo-1589301760014-d929f39ce9b0?auto=format&fit=crop&q=80&w=1974" 
-                alt="Traditional Indian Spices" 
+                src="https://loremflickr.com/1974/1000/chef,cooking?lock=106" 
+                alt="Traditional Indian Spices and Flavours" 
                 className="w-full h-full object-cover rounded-t-[9.5rem] rounded-b-sm group-hover:scale-[1.03] transition-transform duration-1000 ease-out"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-transparent to-transparent opacity-60 rounded-t-[9.5rem]"></div>

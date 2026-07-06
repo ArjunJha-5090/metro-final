@@ -9,7 +9,7 @@ export const FinalCTA: React.FC = () => {
       <div 
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=1400")',
+          backgroundImage: 'url("https://loremflickr.com/1400/800/feast,food?lock=107")',
           backgroundPosition: 'center',
           backgroundSize: 'cover',
         }}

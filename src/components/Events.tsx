@@ -3,25 +3,26 @@ import { SectionHeading } from './ui/SectionHeading';
 import { Calendar } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from './ui/Button';
+import { FadeIn } from './animations/FadeIn';
 
 const events = [
   {
-    title: 'Diwali Special Feast',
-    date: 'Oct 24 - Oct 26',
-    image: 'https://images.unsplash.com/photo-1514222709107-a180c68d72b4?auto=format&fit=crop&q=80&w=1000',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-  },
-  {
     title: 'Holi Food Festival',
     date: 'March 15 - March 17',
-    image: 'https://images.unsplash.com/photo-1533606689650-32df9eb7e974?auto=format&fit=crop&q=80&w=1000',
-    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    image: '/assets/images/holi.png',
+    description: 'Celebrate the festival of colors with our special themed thalis, traditional sweets like Gujiya, and endless joy!'
   },
   {
-    title: 'Weekend Family Nights',
-    date: 'Every Sat & Sun',
-    image: 'https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&q=80&w=1000',
-    description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+    title: 'Grand Iftaar Party',
+    date: 'Ramadan Month',
+    image: '/assets/images/iftaar.png',
+    description: 'Break your fast with our lavish Iftaar spread featuring rich Haleem, Kebabs, Biryani, and traditional desserts.'
+  },
+  {
+    title: 'Corporate Conference',
+    date: 'Custom Bookings',
+    image: 'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Host your corporate meetings and conferences in our fully-equipped halls with premium catering services.'
   }
 ];
 
@@ -32,15 +33,18 @@ export const Events: React.FC = () => {
   return (
     <section id="events" className="py-12 md:py-24 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading 
-          title="Events & Celebrations" 
-          subtitle="Join us for special occasions and create unforgettable memories with your loved ones."
-        />
+        <FadeIn direction="up">
+          <SectionHeading 
+            title="Events & Celebrations" 
+            subtitle="Join us for special occasions and create unforgettable memories with your loved ones."
+          />
+        </FadeIn>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-10 mb-10">
           {previewEvents.map((event, index) => (
-            <div key={index} className="premium-card premium-hover flex flex-col group">
-              <div className="relative h-48 overflow-hidden">
+            <FadeIn key={index} direction="up" delay={index * 150}>
+              <div className="premium-card premium-hover flex flex-col group h-full">
+                <div className="relative h-48 overflow-hidden">
                 <img 
                   src={event.image} 
                   alt={event.title} 
@@ -65,14 +69,17 @@ export const Events: React.FC = () => {
                 </div>
               </div>
             </div>
+            </FadeIn>
           ))}
         </div>
 
-        <div className="text-center">
+        <FadeIn direction="up" delay={300}>
+          <div className="text-center">
           <Button size="lg" onClick={() => navigate('/events')} className="shadow-lg">
             View All Events
-          </Button>
-        </div>
+            </Button>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );

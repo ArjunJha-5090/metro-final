@@ -9,59 +9,24 @@ import { Star, Search } from 'lucide-react';
 
 const allStalls = [
   {
-    name: 'Royal Tandoor',
-    category: 'North Indian',
-    image: 'https://images.unsplash.com/photo-1628294895950-9805252327bc?auto=format&fit=crop&q=80&w=2070',
-    description: 'Authentic clay-oven cooking with rich gravies, freshly baked breads, and aromatic kebabs straight from the tandoor.',
-    rating: '4.8'
-  },
-  {
-    name: 'Chaat Junction',
-    category: 'Street Food',
-    image: 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&q=80&w=2000',
-    description: 'The iconic flavours of India\'s street food scene — from pani puri to papdi chaat, every bite is an explosion of taste.',
+    name: "The Rolls Counter",
+    category: "Rolls",
+    image: "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    description: 'Our signature kaathi rolls, paneer rolls, and chicken tikka rolls wrapped to perfection.',
     rating: '4.9'
   },
   {
-    name: 'Dosa Express',
-    category: 'South Indian',
-    image: 'https://images.unsplash.com/photo-1589301760014-d929f39ce9b1?auto=format&fit=crop&q=80&w=2000',
-    description: 'Crisp, golden dosas served with an array of chutneys and sambar, bringing the spirit of South India to your plate.',
-    rating: '4.7'
-  },
-  {
-    name: 'Biryani House',
-    category: 'Mughlai',
-    image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&q=80&w=2000',
-    description: 'Slow-cooked Dum Biryani layered with fragrant basmati rice and premium ingredients — a regal Mughal feast.',
-    rating: '4.9'
-  },
-  {
-    name: 'Sweet Treats',
-    category: 'Desserts',
-    image: 'https://images.unsplash.com/photo-1585237466854-4775438865f9?auto=format&fit=crop&q=80&w=2000',
-    description: 'From creamy kulfi to delicate gulab jamun, our dessert stall is a sweet ending to every perfect meal.',
-    rating: '4.6'
-  },
-  {
-    name: 'Chai Point',
-    category: 'Beverages',
-    image: 'https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?auto=format&fit=crop&q=80&w=2000',
-    description: 'Artisanal masala chai, fresh lassi, and refreshing sherbets brewed to perfection for every palate.',
+    name: "North Indian Kitchen",
+    category: "North Indian",
+    image: "https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    description: 'Authentic rich gravies, freshly baked breads, and aromatic curries straight from our kitchen.',
     rating: '4.8'
   },
   {
-    name: 'Pizza Corner',
-    category: 'Italian',
-    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=2000',
-    description: 'Delicious wood-fired pizzas with authentic Italian ingredients and flavors.',
-    rating: '4.5'
-  },
-  {
-    name: 'Burger Joint',
-    category: 'Fast Food',
-    image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&q=80&w=2000',
-    description: 'Juicy, gourmet burgers served with crispy fries and special house sauce.',
+    name: "Chinese Wok",
+    category: "Chinese",
+    image: "https://images.pexels.com/photos/2347311/pexels-photo-2347311.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    description: 'Sizzling noodles, fried rice, and Manchurian dishes tossed with authentic flavors.',
     rating: '4.7'
   }
 ];
@@ -76,7 +41,7 @@ export const FoodStallsPage: React.FC = () => {
 
   return (
     <div className="min-h-screen">
-      <div className="pt-24 pb-16 bg-background relative">
+      <div className="pt-32 md:pt-40 pb-16 bg-background relative">
         <div className="absolute inset-0 opacity-[0.02] bg-[url('https://www.transparenttextures.com/patterns/arabesque.png')] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

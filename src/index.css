@@ -7,6 +7,10 @@
     --color-bg: #ff00001a;   /* ← change bg here — very light red tint */
   }
 
+  html, body {
+    overflow-x: hidden;
+  }
+
   body {
     background-color: var(--color-bg);
     @apply text-text font-sans antialiased selection:bg-accent selection:text-secondary;

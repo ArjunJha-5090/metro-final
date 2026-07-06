@@ -8,7 +8,7 @@ export const Contact: React.FC = () => {
     <section id="contact" className="py-12 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading 
-          title="Get In Touch" 
+          title="Visit Us" 
           subtitle="We'd love to hear from you. Here's how you can reach us."
         />
 
@@ -21,8 +21,8 @@ export const Contact: React.FC = () => {
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-heading font-semibold text-secondary mb-1">Location</h4>
-                  <p className="text-text/70 text-sm">Gyan Ganga Trade Centre,<br/>Chamanchak, Bypass,<br/>Patna - 27</p>
+                  <h4 className="font-heading font-semibold text-secondary mb-1">Address</h4>
+                  <p className="text-text/70 text-sm">Gyan Ganga Trade Centre,<br/>Kankarbagh, Patna</p>
                 </div>
               </div>
               <div className="flex gap-4">
@@ -31,7 +31,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-heading font-semibold text-secondary mb-1">Phone</h4>
-                  <p className="text-text/70 text-sm">+91 (123) 456-7890</p>
+                  <p className="text-text/70 text-sm">6287601908</p>
                 </div>
               </div>
               <div className="flex gap-4">
@@ -49,60 +49,66 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-heading font-semibold text-secondary mb-1">Hours</h4>
-                  <p className="text-text/70 text-sm">Mon-Sun: 10am - 10pm</p>
+                  <p className="text-text/70 text-sm">Mon-Sun: 11:00 AM - 11:00 PM</p>
                 </div>
               </div>
             </div>
 
-            {/* Google Maps Placeholder */}
-            <div className="w-full h-64 bg-gray-200 rounded-xl overflow-hidden relative shadow-inner">
-               <div className="absolute inset-0 flex items-center justify-center text-gray-500 font-medium">
-                 [Google Maps Embedded View Placeholder]
-               </div>
-               {/* Replace src below with actual embed link later */}
-               {/* <iframe src="..." width="100%" height="100%" style={{border:0}} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe> */}
+            {/* Google Map */}
+            <div className="w-full h-[280px] rounded-3xl overflow-hidden relative shadow-[0_10px_40px_rgba(193,155,94,0.15)] hover:shadow-[0_20px_50px_rgba(193,155,94,0.25)] border-4 border-white transform hover:-translate-y-1 transition-all duration-500 bg-gray-100 mt-6">
+               <iframe 
+                 src="https://maps.google.com/maps?q=Gyan+Ganga+Trade+Centre,+East+Lakshmi+Nagar,+Patna,+Bihar&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                 width="100%" 
+                 height="100%" 
+                 style={{border:0, filter: 'contrast(1.05) saturate(1.1)'}} 
+                 allowFullScreen 
+                 loading="lazy" 
+                 referrerPolicy="no-referrer-when-downgrade"
+                 title="Metro Food Court Location"
+                 className="absolute inset-0"
+               ></iframe>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="bg-background p-8 rounded-2xl shadow-md border border-orange-50">
-            <h3 className="font-heading font-bold text-2xl text-secondary mb-6">Send us a message</h3>
+          <div className="bg-[#FDFBF7] p-6 md:p-8 rounded-3xl shadow-[0_8px_30px_-12px_rgba(0,0,0,0.1)] border-2 border-accent/20 h-fit">
+            <h3 className="font-heading font-bold text-2xl md:text-3xl text-secondary mb-6">Send us a message</h3>
             <form className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-text/80 mb-1">Full Name</label>
+                <label htmlFor="name" className="block text-sm font-semibold text-text/80 mb-1.5">Full Name</label>
                 <input 
                   type="text" 
                   id="name" 
-                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors"
+                  className="w-full px-4 py-3 rounded-xl border-2 border-accent/20 bg-white focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all shadow-sm font-medium"
                   placeholder="John Doe"
                 />
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-text/80 mb-1">Email Address</label>
+                  <label htmlFor="email" className="block text-sm font-semibold text-text/80 mb-1.5">Email Address</label>
                   <input 
                     type="email" 
                     id="email" 
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors"
+                    className="w-full px-4 py-3 rounded-xl border-2 border-accent/20 bg-white focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all shadow-sm font-medium"
                     placeholder="john@example.com"
                   />
                 </div>
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-text/80 mb-1">Phone Number</label>
+                  <label htmlFor="phone" className="block text-sm font-semibold text-text/80 mb-1.5">Phone Number</label>
                   <input 
                     type="tel" 
                     id="phone" 
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors"
+                    className="w-full px-4 py-3 rounded-xl border-2 border-accent/20 bg-white focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all shadow-sm font-medium"
                     placeholder="+91 98765 43210"
                   />
                 </div>
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-text/80 mb-1">Your Message</label>
+                <label htmlFor="message" className="block text-sm font-semibold text-text/80 mb-1.5">Your Message</label>
                 <textarea 
                   id="message" 
-                  rows={4}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors resize-none"
+                  rows={3}
+                  className="w-full px-4 py-3 rounded-xl border-2 border-accent/20 bg-white focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all resize-none shadow-sm font-medium"
                   placeholder="How can we help you?"
                 ></textarea>
               </div>
@@ -110,7 +116,7 @@ export const Contact: React.FC = () => {
                 Send Message
               </Button>
               <a
-                href="https://api.whatsapp.com/send/?phone=919711240950"
+                href="https://api.whatsapp.com/send/?phone=916287601908"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full mt-3 flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-lg bg-[#25D366] hover:bg-[#1ebe5d] text-white font-semibold text-base transition-colors duration-200 shadow-sm"

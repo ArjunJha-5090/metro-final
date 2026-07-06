@@ -3,49 +3,29 @@ import { SectionHeading } from './ui/SectionHeading';
 import { Star } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from './ui/Button';
+import { FadeIn } from './animations/FadeIn';
 
 const stalls = [
   {
-    name: 'Royal Tandoor',
-    category: 'North Indian',
-    image: 'https://images.unsplash.com/photo-1628294895950-9805252327bc?auto=format&fit=crop&q=80&w=2070',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.',
-    rating: '4.8'
-  },
-  {
-    name: 'Chaat Junction',
-    category: 'Street Food',
-    image: 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&q=80&w=2000',
-    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.',
+    name: "The Rolls Counter",
+    category: "Rolls",
+    image: "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    description: 'Our signature kaathi rolls, paneer rolls, and chicken tikka rolls wrapped to perfection.',
     rating: '4.9'
   },
   {
-    name: 'Dosa Express',
-    category: 'South Indian',
-    image: 'https://images.unsplash.com/photo-1589301760014-d929f39ce9b1?auto=format&fit=crop&q=80&w=2000',
-    description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.',
+    name: "North Indian Kitchen",
+    category: "North Indian",
+    image: "https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    description: 'Authentic rich gravies, freshly baked breads, and aromatic curries straight from our kitchen.',
+    rating: '4.8'
+  },
+  {
+    name: "Chinese Wok",
+    category: "Chinese",
+    image: "https://images.pexels.com/photos/2347311/pexels-photo-2347311.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    description: 'Sizzling noodles, fried rice, and Manchurian dishes tossed with authentic flavors.',
     rating: '4.7'
-  },
-  {
-    name: 'Biryani House',
-    category: 'Mughlai',
-    image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&q=80&w=2000',
-    description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.',
-    rating: '4.9'
-  },
-  {
-    name: 'Sweet Treats',
-    category: 'Desserts',
-    image: 'https://images.unsplash.com/photo-1585237466854-4775438865f9?auto=format&fit=crop&q=80&w=2000',
-    description: 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.',
-    rating: '4.6'
-  },
-  {
-    name: 'Chai Point',
-    category: 'Beverages',
-    image: 'https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?auto=format&fit=crop&q=80&w=2000',
-    description: 'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.',
-    rating: '4.8'
   }
 ];
 
@@ -59,15 +39,18 @@ export const FoodStalls: React.FC = () => {
       <div className="absolute inset-0 opacity-[0.02] bg-[url('https://www.transparenttextures.com/patterns/arabesque.png')] pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <SectionHeading 
-          title="Our Food Stalls" 
-          subtitle="Explore a diverse range of culinary delights brought to you by our premium vendors."
-        />
+        <FadeIn direction="up">
+          <SectionHeading 
+            title="Our Food Stalls" 
+            subtitle="Explore a diverse range of culinary delights brought to you by our premium vendors."
+          />
+        </FadeIn>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
           {previewStalls.map((stall, index) => (
-            <div key={index} className="premium-card premium-hover group flex flex-col">
-              <div className="relative h-56 overflow-hidden">
+            <FadeIn key={index} direction="up" delay={index * 150}>
+              <div className="premium-card premium-hover group flex flex-col h-full">
+                <div className="relative h-56 overflow-hidden">
                 <img 
                   src={stall.image} 
                   alt={stall.name} 
@@ -98,14 +81,17 @@ export const FoodStalls: React.FC = () => {
                 </div>
               </div>
             </div>
+            </FadeIn>
           ))}
         </div>
 
-        <div className="text-center">
-          <Button size="lg" onClick={() => navigate('/stalls')} className="shadow-lg">
-            View All Stalls
-          </Button>
-        </div>
+        <FadeIn direction="up" delay={300}>
+          <div className="text-center">
+            <Button size="lg" onClick={() => navigate('/stalls')} className="shadow-lg">
+              View All Stalls
+            </Button>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );

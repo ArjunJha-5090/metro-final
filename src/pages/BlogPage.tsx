@@ -8,7 +8,7 @@ const blogPosts = [
     id: 1,
     title: 'The Art of the Perfect Dum Biryani: A Heritage Recipe',
     excerpt: 'Journey into the royal kitchens of Lucknow and discover the ancient secrets behind the slow-cooked Dum Biryani that has enchanted food lovers for centuries.',
-    image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
     category: 'Food Stories',
     author: 'Chef Rajeev Sharma',
     date: 'June 28, 2026',
@@ -19,7 +19,7 @@ const blogPosts = [
     id: 2,
     title: 'How We Source Our Spices: A Journey Across India',
     excerpt: 'From the pepper farms of Kerala to the saffron fields of Kashmir — we take you on a road trip to find the purest spices for Metro Food Court.',
-    image: 'https://images.unsplash.com/photo-1589301760014-d929f39ce9b0?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
     category: 'Behind the Scenes',
     author: 'Priya Mehta',
     date: 'June 20, 2026',
@@ -30,7 +30,7 @@ const blogPosts = [
     id: 3,
     title: 'Celebrating Holi at Metro Food Court: An Event to Remember',
     excerpt: 'Colours, music, and the finest street food. Read about how we brought the festival of Holi alive inside our food court this spring.',
-    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.pexels.com/photos/8891515/pexels-photo-8891515.jpeg?auto=compress&cs=tinysrgb&w=1200',
     category: 'Events',
     author: 'Events Team',
     date: 'June 12, 2026',
@@ -41,7 +41,7 @@ const blogPosts = [
     id: 4,
     title: '5 South Indian Dishes You Must Try Before You Die',
     excerpt: 'Idli, Dosa, Sambar, Rasam, and Chettinad Curry — a definitive guide to the most iconic dishes from the southern tip of India.',
-    image: 'https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://loremflickr.com/1200/800/dosa,food?lock=112',
     category: 'Culture',
     author: 'Ananya Rao',
     date: 'June 5, 2026',
@@ -52,7 +52,7 @@ const blogPosts = [
     id: 5,
     title: 'Recipe: Authentic Chaat in 20 Minutes',
     excerpt: 'Our head chaat-wala shares his foolproof recipe for pani puri, sev puri, and papdi chaat — the perfect snack for any occasion.',
-    image: 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
     category: 'Recipes',
     author: 'Chef Ramesh',
     date: 'May 29, 2026',
@@ -63,7 +63,7 @@ const blogPosts = [
     id: 6,
     title: 'Meet Our Chai Master: The Story Behind Every Cup',
     excerpt: 'Suresh ji has been brewing masala chai for over 30 years. We sit down with him to learn the magic behind the perfect cup that keeps customers coming back.',
-    image: 'https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
     category: 'Behind the Scenes',
     author: 'Deepa Nair',
     date: 'May 18, 2026',
@@ -83,47 +83,57 @@ export const BlogPage: React.FC = () => {
   const rest = filtered.filter(p => p.id !== featured?.id);
 
   return (
-    <div className="pt-24 pb-24 min-h-screen bg-background relative">
+    <div className="pb-24 min-h-screen bg-background relative selection:bg-accent selection:text-white">
       {/* Subtle background */}
-      <div className="absolute inset-0 bg-indian-pattern opacity-[0.02] pointer-events-none" />
+      <div className="fixed inset-0 bg-indian-pattern opacity-[0.03] pointer-events-none z-0" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-
-        {/* Header */}
-        <div className="text-center mb-16">
-          <span className="inline-flex items-center gap-2 py-1.5 px-5 rounded-full bg-surface border border-accent/30 text-xs font-bold tracking-[0.25em] text-primary uppercase mb-6 shadow-sm">
-            <span className="w-1 h-1 rounded-full bg-accent" />
+      {/* Hero Banner */}
+      <div className="w-full h-[35vh] md:h-[45vh] relative mb-12 md:mb-16 shadow-xl z-10">
+        <img 
+          src="https://loremflickr.com/1974/800/spices,ingredients?lock=115" 
+          alt="Spices and Cooking" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-secondary/70 to-transparent"></div>
+        <div className="absolute inset-0 flex flex-col items-center justify-end pb-12 text-center px-4">
+          <span className="inline-flex items-center gap-2 py-1.5 px-5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-bold tracking-[0.25em] text-white uppercase mb-4 md:mb-6 shadow-sm">
+            <span className="w-1 h-1 rounded-full bg-primary" />
             Stories & Insights
-            <span className="w-1 h-1 rounded-full bg-accent" />
+            <span className="w-1 h-1 rounded-full bg-primary" />
           </span>
-          <h1 className="text-5xl md:text-7xl font-heading text-secondary mb-4 tracking-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading text-white mb-4 drop-shadow-lg leading-tight">
             The Metro Blog
           </h1>
-          <p className="text-text/70 text-lg max-w-2xl mx-auto font-light">
+          <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto font-light drop-shadow-md">
             Recipes, cultural stories, behind-the-scenes journeys, and everything in between.
           </p>
         </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
 
         {/* Category Filter */}
-        <div className="flex flex-wrap gap-3 justify-center mb-14">
-          {categories.map(cat => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`px-5 py-2 rounded-full text-sm font-semibold tracking-wide transition-all duration-200 border ${
-                activeCategory === cat
-                  ? 'bg-primary text-white border-primary shadow-heritage'
-                  : 'bg-surface text-text/70 border-accent/20 hover:border-primary hover:text-primary'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
+        <div className="w-full overflow-x-auto scrollbar-none mb-12 pb-4 px-4 sm:px-0 -mx-4 sm:mx-0" style={{ WebkitOverflowScrolling: 'touch' }}>
+          <div className="flex gap-2.5 lg:justify-center w-max min-w-full">
+            {categories.map(cat => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-5 md:px-6 py-2.5 md:py-3 rounded-full font-sans text-xs sm:text-sm md:text-base font-bold uppercase tracking-wider transition-all duration-300 border-2 ${
+                  activeCategory === cat
+                    ? 'bg-primary text-white border-primary shadow-[0_8px_20px_rgba(138,46,40,0.3)] transform scale-105'
+                    : 'bg-white text-secondary/70 border-accent/20 hover:border-primary/50 hover:text-primary hover:bg-[#FFF9F9]'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Featured Post */}
         {featured && (
-          <div className="group relative rounded-3xl overflow-hidden shadow-heritage mb-16 cursor-pointer border border-accent/10 bg-surface hover:shadow-xl transition-all duration-500">
+          <div className="group relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] mb-16 cursor-pointer border-2 border-accent/20 bg-[#FDFBF7] hover:shadow-[0_30px_60px_rgba(138,46,40,0.15)] transition-all duration-500">
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <div className="relative h-72 lg:h-full min-h-[320px] overflow-hidden">
                 <img
@@ -131,27 +141,27 @@ export const BlogPage: React.FC = () => {
                   alt={featured.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/20 lg:bg-gradient-to-r lg:from-transparent lg:to-black/10" />
-                <span className="absolute top-6 left-6 bg-primary text-white text-xs font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-full">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent lg:hidden" />
+                <span className="absolute top-6 left-6 bg-white/90 backdrop-blur-md text-primary text-xs font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-full shadow-sm">
                   Featured
                 </span>
               </div>
-              <div className="p-10 lg:p-14 flex flex-col justify-center">
-                <span className="inline-flex items-center gap-1.5 text-accent text-xs font-bold tracking-[0.2em] uppercase mb-4">
+              <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center relative">
+                <div className="absolute inset-0 bg-henna-pattern opacity-[0.03] pointer-events-none mix-blend-multiply"></div>
+                <span className="inline-flex items-center gap-1.5 text-accent text-xs font-bold tracking-[0.2em] uppercase mb-4 relative z-10">
                   <Tag className="w-3 h-3" /> {featured.category}
                 </span>
-                <h2 className="font-heading text-3xl lg:text-4xl text-secondary mb-4 leading-tight group-hover:text-primary transition-colors">
+                <h2 className="font-heading text-3xl lg:text-4xl text-secondary mb-4 leading-tight group-hover:text-primary transition-colors relative z-10">
                   {featured.title}
                 </h2>
-                <p className="text-text/70 leading-relaxed mb-8 font-light">
+                <p className="text-text/70 leading-relaxed mb-8 font-medium relative z-10">
                   {featured.excerpt}
                 </p>
-                <div className="flex items-center gap-6 text-sm text-text/50 mb-8">
-                  <span className="flex items-center gap-1.5"><User className="w-4 h-4" />{featured.author}</span>
-                  <span className="flex items-center gap-1.5"><Clock className="w-4 h-4" />{featured.readTime}</span>
-                  <span>{featured.date}</span>
+                <div className="flex items-center gap-6 text-sm text-text/50 mb-8 font-semibold relative z-10">
+                  <span className="flex items-center gap-1.5"><User className="w-4 h-4 text-accent" />{featured.author}</span>
+                  <span className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-accent" />{featured.readTime}</span>
                 </div>
-                <button className="self-start inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary/90 transition-colors shadow-heritage group/btn">
+                <button className="self-start inline-flex items-center gap-2 bg-primary text-white px-8 py-3.5 rounded-full font-bold uppercase tracking-wider hover:bg-primary/90 transition-all shadow-[0_8px_20px_rgba(138,46,40,0.3)] hover:-translate-y-1 group/btn relative z-10">
                   Read Article
                   <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                 </button>
@@ -162,34 +172,36 @@ export const BlogPage: React.FC = () => {
 
         {/* Blog Grid */}
         {rest.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
             {rest.map(post => (
               <article
                 key={post.id}
-                className="group bg-surface rounded-2xl overflow-hidden shadow-premium hover:shadow-heritage transition-all duration-300 border border-accent/10 hover:-translate-y-1 cursor-pointer flex flex-col"
+                className="group bg-[#FDFBF7] rounded-3xl overflow-hidden shadow-[0_8px_30px_-12px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_-15px_rgba(138,46,40,0.2)] transition-all duration-300 border-2 border-accent/10 hover:border-primary/30 hover:-translate-y-2 cursor-pointer flex flex-col relative"
               >
-                <div className="relative h-52 overflow-hidden">
+                <div className="absolute inset-0 bg-indian-pattern opacity-[0.02] pointer-events-none mix-blend-multiply"></div>
+                
+                <div className="relative h-60 overflow-hidden m-2 rounded-2xl">
                   <img
                     src={post.image}
                     alt={post.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  <span className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm text-primary text-xs font-bold tracking-[0.1em] uppercase px-3 py-1 rounded-full">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                  <span className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm text-primary text-xs font-bold tracking-[0.1em] uppercase px-3 py-1 rounded-full shadow-sm">
                     {post.category}
                   </span>
                 </div>
 
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="font-heading text-xl text-secondary mb-3 leading-snug group-hover:text-primary transition-colors">
+                <div className="p-6 md:p-8 flex flex-col flex-grow relative z-10">
+                  <h3 className="font-heading text-xl md:text-2xl text-secondary mb-3 leading-snug group-hover:text-primary transition-colors">
                     {post.title}
                   </h3>
-                  <p className="text-text/65 text-sm leading-relaxed mb-5 font-light flex-grow">
+                  <p className="text-text/70 text-sm leading-relaxed mb-6 font-medium flex-grow">
                     {post.excerpt}
                   </p>
-                  <div className="flex items-center justify-between text-xs text-text/45 pt-4 border-t border-accent/10">
-                    <span className="flex items-center gap-1.5"><User className="w-3 h-3" />{post.author}</span>
-                    <span className="flex items-center gap-1.5"><Clock className="w-3 h-3" />{post.readTime}</span>
+                  <div className="flex items-center justify-between text-xs text-text/50 pt-5 border-t-2 border-accent/10 font-semibold">
+                    <span className="flex items-center gap-1.5"><User className="w-3.5 h-3.5 text-accent" />{post.author}</span>
+                    <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5 text-accent" />{post.readTime}</span>
                   </div>
                 </div>
               </article>

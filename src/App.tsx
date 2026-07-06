@@ -10,6 +10,8 @@ import { GalleryPage } from './pages/GalleryPage';
 import { BanquetsPage } from './pages/BanquetsPage';
 import { BlogPage } from './pages/BlogPage';
 import { MenuPage } from './pages/MenuPage';
+import { FAQPage } from './pages/FAQPage';
+import { PageLoader } from './components/PageLoader';
 
 function ScrollToHashElement() {
   const { hash, pathname } = useLocation();
@@ -34,6 +36,7 @@ function App() {
   return (
     <Router>
       <ScrollToHashElement />
+      <PageLoader />
       <div className="font-sans text-text antialiased min-h-screen flex flex-col">
         <Navbar />
 
@@ -51,6 +54,7 @@ function App() {
             <Route path="/banquets" element={<BanquetsPage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/menu" element={<MenuPage />} />
+            <Route path="/faq" element={<FAQPage />} />
           </Routes>
         </main>
 

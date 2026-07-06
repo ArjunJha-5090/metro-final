@@ -4,34 +4,22 @@ import { Calendar, Search } from 'lucide-react';
 
 const allEvents = [
   {
-    title: 'Diwali Special Feast',
-    date: 'Oct 24 - Oct 26',
-    image: 'https://images.unsplash.com/photo-1514222709107-a180c68d72b4?auto=format&fit=crop&q=80&w=1000',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-  },
-  {
     title: 'Holi Food Festival',
     date: 'March 15 - March 17',
-    image: 'https://images.unsplash.com/photo-1533606689650-32df9eb7e974?auto=format&fit=crop&q=80&w=1000',
-    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    image: '/assets/images/holi.png',
+    description: 'Celebrate the festival of colors with our special themed thalis, traditional sweets like Gujiya, and endless joy!'
   },
   {
-    title: 'Weekend Family Nights',
-    date: 'Every Sat & Sun',
-    image: 'https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&q=80&w=1000',
-    description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+    title: 'Grand Iftaar Party',
+    date: 'Ramadan Month',
+    image: '/assets/images/iftaar.png',
+    description: 'Break your fast with our lavish Iftaar spread featuring rich Haleem, Kebabs, Biryani, and traditional desserts.'
   },
   {
-    title: 'Live Music Evenings',
-    date: 'Every Friday',
-    image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&q=80&w=1000',
-    description: 'Enjoy live performances from local bands while you dine.'
-  },
-  {
-    title: 'Kids Culinary Workshop',
-    date: '1st Sunday of Month',
-    image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=1000',
-    description: 'Fun cooking and decorating workshops for kids under 12.'
+    title: 'Corporate Conference',
+    date: 'Custom Bookings',
+    image: 'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Host your corporate meetings and conferences in our fully-equipped halls with premium catering services.'
   }
 ];
 
@@ -43,7 +31,7 @@ export const EventsPage: React.FC = () => {
   );
 
   return (
-    <div className="pt-24 pb-24 bg-background min-h-screen">
+    <div className="pt-32 md:pt-40 pb-24 bg-background min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading 
           title="All Events & Celebrations" 

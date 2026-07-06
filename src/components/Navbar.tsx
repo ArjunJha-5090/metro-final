@@ -1,19 +1,40 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const Navbar: React.FC = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+    
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      lastScrollY = currentScrollY;
     };
-    window.addEventListener('scroll', handleScroll);
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
 
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -21,28 +42,26 @@ export const Navbar: React.FC = () => {
     { name: 'Food Stalls', href: '/stalls' },
     { name: 'Menu', href: '/menu' },
     { name: 'Banquets', href: '/banquets' },
-    { name: 'Events', href: '/events' },
     { name: 'Gallery', href: '/gallery' },
+    { name: 'FAQ', href: '/faq' },
     { name: 'Blog', href: '/blog' },
   ];
 
-  const isHomePage = location.pathname === '/';
-  const headerBg = isScrolled || !isHomePage ? 'bg-background border-b border-accent/20 shadow-premium' : 'bg-transparent border-b border-transparent';
-  const textColor = isScrolled || !isHomePage ? 'text-secondary' : 'text-background';
+  const headerBg = 'xl:bg-[#ffe6e6]/75 xl:backdrop-blur-md xl:border-b xl:border-accent/20 xl:shadow-premium bg-transparent transition-all duration-300';
+  const transformClass = isVisible ? 'translate-y-0' : '-translate-y-full';
 
   return (
-    <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${headerBg} py-2`}>
+    <header className={`fixed w-full top-0 z-50 transition-transform duration-300 ${headerBg} ${transformClass} py-2`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center gap-2">
-            <Link to="/" className="flex items-center gap-2 group">
-              <div className="h-10 w-10 bg-primary border border-accent/50 rounded-full flex items-center justify-center font-heading text-background text-xl shadow-premium group-hover:bg-accent group-hover:text-primary group-hover:-translate-y-1 transition-all">
-                MF
-              </div>
-              <span className={`font-heading uppercase font-normal text-3xl tracking-wider transition-colors duration-300 ${textColor}`}>
-                Metro Food
-              </span>
+          <div className="flex-shrink-0 flex items-center h-full py-1">
+            <Link to="/" className="flex items-center group h-full">
+              <img 
+                src="/assets/images/logo-transparent.png" 
+                alt="Metro Food Court Logo" 
+                className="h-14 md:h-20 w-auto object-contain filter drop-shadow-sm group-hover:scale-105 transition-all duration-300" 
+              />
             </Link>
           </div>
 
@@ -52,9 +71,7 @@ export const Navbar: React.FC = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className={`px-3 py-2 text-lg font-heading uppercase tracking-wide border-2 border-transparent hover:border-secondary hover:bg-accent hover:text-secondary hover:shadow-brutal-sm transition-all duration-150 ${
-                  isScrolled || !isHomePage ? 'text-secondary' : 'text-background hover:text-secondary'
-                }`}
+                className={`px-3 py-2 text-lg font-heading uppercase tracking-wide border-2 border-transparent hover:border-secondary hover:bg-accent hover:text-secondary hover:shadow-brutal-sm transition-all duration-150 text-secondary`}
               >
                 {link.name}
               </a>
@@ -65,7 +82,7 @@ export const Navbar: React.FC = () => {
           <div className="xl:hidden flex items-center">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`p-2 border-2 ${isScrolled || !isHomePage ? 'border-secondary text-secondary hover:bg-accent' : 'border-background text-background hover:bg-white/20'} focus:outline-none transition-colors`}
+              className={`p-2 border-2 border-secondary text-secondary bg-white/95 backdrop-blur-md hover:bg-accent focus:outline-none transition-all rounded-xl shadow-sm`}
             >
               {isMobileMenuOpen ? (
                 <X className="h-6 w-6" aria-hidden="true" strokeWidth={3} />
@@ -77,16 +94,16 @@ export const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu overlay */}
       {isMobileMenuOpen && (
-        <div className="xl:hidden bg-background border-b-4 border-secondary shadow-brutal absolute top-full left-0 w-full">
-          <div className="px-4 py-4 space-y-2">
+        <div className="fixed inset-0 z-40 bg-background/95 backdrop-blur-lg flex flex-col xl:hidden pt-24 px-4 overflow-y-auto">
+          <div className="flex flex-col space-y-4 pb-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block px-4 py-3 border-2 border-transparent hover:border-secondary text-xl font-heading uppercase text-secondary hover:bg-accent hover:shadow-brutal-sm transition-all"
+                className="block px-6 py-4 border-2 border-secondary/20 hover:border-secondary text-2xl font-heading uppercase text-secondary bg-white hover:bg-accent rounded-2xl hover:shadow-brutal-sm transition-all text-center shadow-sm"
               >
                 {link.name}
               </a>

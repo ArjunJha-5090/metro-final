@@ -74,7 +74,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <p className="font-medium text-white mb-1">WhatsApp</p>
-                <a href="https://api.whatsapp.com/send/?phone=919711240950" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">Chat with us</a>
+                <a href="https://api.whatsapp.com/send/?phone=916287601908" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">Chat with us</a>
               </li>
             </ul>
           </div>

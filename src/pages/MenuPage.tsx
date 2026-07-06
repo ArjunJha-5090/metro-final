@@ -34,44 +34,51 @@ const VegDot: React.FC<{ isVeg?: boolean; isEgg?: boolean }> = ({ isVeg, isEgg }
   );
 };
 
-// ── section card ─────────────────────────────────────────────────
-const MenuCard: React.FC<{ section: MenuSection; accent?: string }> = ({
-  section,
-  accent = 'bg-primary',
-}) => (
-  <div className="bg-white rounded-2xl shadow-sm border border-orange-100 overflow-hidden">
-    {/* Header */}
-    <div className={`${accent} px-6 py-4`}>
-      <h3 className="font-heading text-xl font-bold text-white uppercase tracking-widest">
-        {section.title}
-      </h3>
-      {section.note && (
-        <p className="text-white/70 text-xs mt-1 font-medium">{section.note}</p>
-      )}
-    </div>
-    {/* Items */}
-    <ul className="divide-y divide-orange-50">
-      {section.items.map((item, i) => (
-        <li
-          key={i}
-          className="flex items-center justify-between gap-3 px-5 py-3 hover:bg-orange-50/60 transition-colors group"
-        >
-          <div className="flex items-center gap-2.5 min-w-0">
-            {item.isVeg !== undefined && (
-              <VegDot isVeg={item.isVeg} isEgg={item.isEgg} />
-            )}
-            <span className="font-sans text-sm text-secondary group-hover:text-primary transition-colors leading-snug">
-              {i + 1}. {item.name}
+const MenuSectionDisplay: React.FC<{ section: MenuSection; filter: string }> = ({ section, filter }) => {
+  // Filter items based on dietary preference
+  const filteredItems = section.items.filter(item => {
+    if (filter === 'veg') return item.isVeg === true && !item.isEgg;
+    if (filter === 'nonveg') return item.isVeg === false || item.isEgg === true;
+    return true;
+  });
+
+  if (filteredItems.length === 0) return null;
+
+  return (
+    <div className="mb-16 md:mb-20">
+      <div className="text-center mb-8 md:mb-10 relative px-2">
+        <div className="absolute left-0 top-1/2 w-full h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent -translate-y-1/2"></div>
+        <span className="relative z-10 bg-[#FDFBF7] px-6 md:px-8 py-2 md:py-3 border border-accent/30 rounded-full font-heading text-2xl md:text-4xl text-secondary inline-block shadow-sm mx-auto max-w-full leading-tight">
+          {section.title}
+        </span>
+        {section.note && (
+          <p className="text-accent text-xs md:text-sm mt-3 md:mt-4 font-bold uppercase tracking-widest">{section.note}</p>
+        )}
+      </div>
+      
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 md:gap-x-16 gap-y-6 md:gap-y-7">
+        {filteredItems.map((item, i) => (
+          <div key={i} className="flex items-end group w-full">
+            <div className="flex items-start gap-2.5 pb-1 shrink">
+              <div className="mt-1 md:mt-1.5 flex-shrink-0">
+                {item.isVeg !== undefined && (
+                  <VegDot isVeg={item.isVeg} isEgg={item.isEgg} />
+                )}
+              </div>
+              <span className="font-sans text-[15px] sm:text-base md:text-lg text-secondary group-hover:text-primary transition-colors leading-snug md:leading-none font-medium break-words">
+                {item.name}
+              </span>
+            </div>
+            <div className="flex-1 border-b-[2px] md:border-b-[3px] border-dotted border-accent/30 mx-2 md:mx-4 mb-2 opacity-60 group-hover:opacity-100 group-hover:border-primary/50 transition-all min-w-[1rem]"></div>
+            <span className="font-heading font-bold text-primary text-[17px] sm:text-lg md:text-2xl leading-none pb-1 shrink-0">
+              ₹{item.price}
             </span>
           </div>
-          <span className="font-heading font-bold text-primary text-sm whitespace-nowrap">
-            ₹{item.price}
-          </span>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+        ))}
+      </div>
+    </div>
+  );
+};
 
 // ── data ─────────────────────────────────────────────────────────
 const indianVeg: MenuSection = {
@@ -257,86 +264,81 @@ const dessert: MenuSection = {
 
 // ── tab config ───────────────────────────────────────────────────
 const tabs = [
-  { id: 'all', label: 'All' },
-  { id: 'veg', label: '🟢 Veg' },
-  { id: 'nonveg', label: '🔴 Non Veg' },
-  { id: 'tandoor', label: '🔥 Tandoor' },
-  { id: 'chinese', label: '🥢 Chinese' },
-  { id: 'snacks', label: '🥙 Snacks & More' },
+  { id: 'all', label: 'All Categories' },
+  { id: 'veg', label: 'Pure Veg Only' },
+  { id: 'nonveg', label: 'Non-Veg Only' },
+  { id: 'rolls', label: 'Rolls' },
+  { id: 'chinese', label: 'Chinese' },
+  { id: 'tandoor', label: 'Tandoor' },
+  { id: 'more', label: 'More Delights' },
 ];
 
 // ── page ─────────────────────────────────────────────────────────
 export const MenuPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState('all');
 
-  const showVeg = activeTab === 'all' || activeTab === 'veg';
-  const showNonVeg = activeTab === 'all' || activeTab === 'nonveg';
-  const showTandoor = activeTab === 'all' || activeTab === 'tandoor';
-  const showChinese = activeTab === 'all' || activeTab === 'chinese';
-  const showSnacks = activeTab === 'all' || activeTab === 'snacks';
+  const isDietaryFilter = activeTab === 'veg' || activeTab === 'nonveg';
+  const dietaryFilter = isDietaryFilter ? activeTab : 'all';
+
+  const showRolls = activeTab === 'all' || activeTab === 'rolls' || isDietaryFilter;
+  const showVeg = activeTab === 'all' || activeTab === 'indian' || isDietaryFilter; // Indian Veg
+  const showNonVeg = activeTab === 'all' || activeTab === 'indian' || isDietaryFilter; // Indian Non Veg
+  const showChinese = activeTab === 'all' || activeTab === 'chinese' || isDietaryFilter;
+  const showTandoor = activeTab === 'all' || activeTab === 'tandoor' || isDietaryFilter;
+  const showMore = activeTab === 'all' || activeTab === 'more' || isDietaryFilter;
 
   return (
-    <div className="pt-24 pb-24 min-h-screen bg-background relative">
+    <div className="pb-24 min-h-screen bg-background relative selection:bg-accent selection:text-white">
       {/* subtle pattern */}
-      <div className="absolute inset-0 bg-indian-pattern opacity-[0.02] pointer-events-none" />
+      <div className="fixed inset-0 bg-indian-pattern opacity-[0.02] pointer-events-none z-0" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-
-        {/* ── Hero ── */}
-        <div className="text-center mb-14 mt-4">
-          <span className="inline-flex items-center gap-2 py-1.5 px-5 rounded-full bg-surface border border-accent/30 text-xs font-bold tracking-[0.25em] text-primary uppercase mb-6 shadow-sm">
+      {/* ── Hero Banner ── */}
+      <div className="w-full h-[40vh] md:h-[50vh] relative mb-12 shadow-xl z-10">
+        <img 
+          src="https://images.pexels.com/photos/2802527/pexels-photo-2802527.jpeg?auto=compress&cs=tinysrgb&w=1920" 
+          alt="Authentic Indian Spices" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-secondary/95 via-secondary/50 to-transparent"></div>
+        <div className="absolute inset-0 flex flex-col items-center justify-end pb-12 md:pb-16 text-center px-4">
+          <span className="inline-flex items-center gap-2 py-1.5 px-5 rounded-full bg-black/40 backdrop-blur-md border border-accent/40 text-xs font-bold tracking-[0.25em] text-accent uppercase mb-6">
             <span className="w-1 h-1 rounded-full bg-accent" />
-            Metro Food Court
+            Culinary Heritage
             <span className="w-1 h-1 rounded-full bg-accent" />
           </span>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading text-secondary mb-4 leading-tight">
-            Our Full Menu
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading text-white mb-6 drop-shadow-lg">
+            Our Grand Menu
           </h1>
-          <p className="text-text/60 max-w-xl mx-auto text-lg font-light">
-            Fresh ingredients · Authentic recipes · Cooked to order
-          </p>
-
-          {/* legend */}
-          <div className="flex items-center justify-center gap-6 mt-6 text-sm font-medium text-text/70">
-            <span className="flex items-center gap-2">
-              <span className="inline-flex items-center justify-center w-4 h-4 border-2 border-green-600">
-                <span className="w-2 h-2 rounded-full bg-green-600" />
-              </span>
-              Vegetarian
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="inline-flex items-center justify-center w-4 h-4 border-2 border-red-600">
-                <span className="w-2 h-2 rounded-full bg-red-600" />
-              </span>
-              Non-Vegetarian
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="inline-flex items-center justify-center w-4 h-4 border-2 border-yellow-500">
-                <span className="w-2 h-2 rounded-full bg-yellow-500" />
-              </span>
-              Egg
-            </span>
-          </div>
+          <div className="w-24 h-1 bg-accent mt-2 rounded-full"></div>
         </div>
+      </div>
 
-        {/* ── Free delivery badge ── */}
-        <div className="flex justify-center mb-8 sm:mb-12">
-          <div className="inline-flex items-center gap-2 sm:gap-3 bg-primary text-white font-heading text-sm sm:text-lg uppercase tracking-widest px-5 sm:px-8 py-2.5 sm:py-3 border-4 border-secondary shadow-[4px_4px_0px_#111] rotate-[-1deg] text-center">
-            🚀 Free Home Delivery
-          </div>
+      <div className="max-w-6xl mx-auto px-2 sm:px-6 lg:px-8 relative z-20 -mt-10 md:-mt-8">
+        
+        {/* ── Legend ── */}
+        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mb-8 text-xs md:text-sm font-semibold text-secondary/80 bg-white/90 backdrop-blur-md py-3 md:py-4 px-6 md:px-8 rounded-full shadow-sm border border-accent/10 w-fit mx-auto">
+          <span className="flex items-center gap-2">
+            <VegDot isVeg={true} /> Vegetarian
+          </span>
+          <span className="flex items-center gap-2">
+            <VegDot isVeg={false} /> Non-Vegetarian
+          </span>
+          <span className="flex items-center gap-2">
+            <VegDot isEgg={true} /> Egg
+          </span>
         </div>
 
         {/* ── Filter Tabs ── */}
-        <div className="-mx-4 px-4 overflow-x-auto scrollbar-none mb-8 sm:mb-12">
-          <div className="flex gap-2 pb-1 min-w-max sm:min-w-0 sm:flex-wrap sm:justify-center">
+        <div className="w-full overflow-x-auto scrollbar-none mb-10 pb-4 px-4" style={{ WebkitOverflowScrolling: 'touch' }}>
+          <div className="flex gap-2.5 lg:justify-center w-max min-w-full">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex-shrink-0 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full font-heading text-xs sm:text-sm font-semibold uppercase tracking-wide transition-all duration-200 border-2 ${
+                className={`px-5 md:px-6 py-2.5 md:py-3 rounded-full font-sans text-xs sm:text-sm md:text-base font-bold uppercase tracking-wider transition-all duration-300 border-2 ${
                   activeTab === tab.id
-                    ? 'bg-primary text-white border-primary shadow-md'
-                    : 'bg-white text-secondary border-secondary/20 hover:border-primary hover:text-primary'
+                    ? 'bg-primary text-white border-primary shadow-[0_8px_20px_rgba(138,46,40,0.3)] transform scale-105'
+                    : 'bg-white text-secondary/70 border-accent/20 hover:border-primary/50 hover:text-primary hover:bg-[#FFF9F9]'
                 }`}
               >
                 {tab.label}
@@ -345,73 +347,42 @@ export const MenuPage: React.FC = () => {
           </div>
         </div>
 
-        {/* ── Grid ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5">
+        {/* ── Menu Book Canvas ── */}
+        <div className="bg-[#FDFBF7] rounded-[2rem] md:rounded-[3rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] border border-accent/20 overflow-hidden relative">
+          
+          {/* Decorative Corner Ornaments */}
+          <div className="absolute top-0 left-0 w-24 h-24 border-t-[6px] border-l-[6px] border-accent/30 rounded-tl-[3rem] m-3 md:m-4 pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-24 h-24 border-t-[6px] border-r-[6px] border-accent/30 rounded-tr-[3rem] m-3 md:m-4 pointer-events-none"></div>
+          <div className="absolute bottom-0 left-0 w-24 h-24 border-b-[6px] border-l-[6px] border-accent/30 rounded-bl-[3rem] m-3 md:m-4 pointer-events-none"></div>
+          <div className="absolute bottom-0 right-0 w-24 h-24 border-b-[6px] border-r-[6px] border-accent/30 rounded-br-[3rem] m-3 md:m-4 pointer-events-none"></div>
+          
+          <div className="absolute inset-0 bg-henna-pattern opacity-[0.02] pointer-events-none mix-blend-multiply"></div>
 
-          {/* Indian Veg */}
-          {showVeg && (
-            <div className="md:col-span-2 xl:col-span-1">
-              <MenuCard section={indianVeg} accent="bg-green-700" />
-            </div>
-          )}
-
-          {/* Indian Non Veg */}
-          {showNonVeg && (
-            <div className="md:col-span-2 xl:col-span-1">
-              <MenuCard section={indianNonVeg} accent="bg-red-700" />
-            </div>
-          )}
-
-          {/* Tandoor */}
-          {showTandoor && (
-            <div className="md:col-span-2 xl:col-span-1">
-              <MenuCard section={tandoor} accent="bg-orange-700" />
-            </div>
-          )}
-
-          {/* Chinese */}
-          {showChinese && (
-            <div className="md:col-span-2 xl:col-span-1">
-              <MenuCard section={chinese} accent="bg-red-600" />
-            </div>
-          )}
-
-          {/* Soup + Rolls side by side */}
-          {showSnacks && (
-            <>
-              <div>
-                <MenuCard section={soup} accent="bg-teal-700" />
-              </div>
-              <div>
-                <MenuCard section={rolls} accent="bg-amber-700" />
-              </div>
-              <div>
-                <MenuCard section={momo} accent="bg-purple-700" />
-              </div>
-              <div>
-                <MenuCard section={roti} accent="bg-yellow-700" />
-              </div>
-              <div>
-                <MenuCard section={thali} accent="bg-primary" />
-              </div>
-            </>
-          )}
-
-          {/* Beverage + Dessert — always shown */}
-          {(activeTab === 'all' || activeTab === 'snacks') && (
-            <>
-              <div>
-                <MenuCard section={beverage} accent="bg-sky-700" />
-              </div>
-              <div>
-                <MenuCard section={dessert} accent="bg-pink-700" />
-              </div>
-            </>
-          )}
+          <div className="px-4 py-10 md:px-16 md:py-24 relative z-10">
+            {showRolls && <MenuSectionDisplay section={rolls} filter={dietaryFilter} />}
+            {showVeg && <MenuSectionDisplay section={indianVeg} filter={dietaryFilter} />}
+            {showNonVeg && <MenuSectionDisplay section={indianNonVeg} filter={dietaryFilter} />}
+            {showChinese && <MenuSectionDisplay section={chinese} filter={dietaryFilter} />}
+            {showTandoor && <MenuSectionDisplay section={tandoor} filter={dietaryFilter} />}
+            {showMore && (
+              <>
+                <MenuSectionDisplay section={soup} filter={dietaryFilter} />
+                <MenuSectionDisplay section={momo} filter={dietaryFilter} />
+                <MenuSectionDisplay section={roti} filter={dietaryFilter} />
+                <MenuSectionDisplay section={thali} filter={dietaryFilter} />
+              </>
+            )}
+            {(activeTab === 'all' || activeTab === 'more' || isDietaryFilter) && (
+              <>
+                <MenuSectionDisplay section={beverage} filter={dietaryFilter} />
+                <MenuSectionDisplay section={dessert} filter={dietaryFilter} />
+              </>
+            )}
+          </div>
         </div>
 
         {/* ── Footer note ── */}
-        <p className="text-center text-text/40 text-xs mt-16 font-light">
+        <p className="text-center text-text/50 text-sm mt-12 font-medium max-w-2xl mx-auto">
           * Prices are inclusive of all taxes. Menu items and prices subject to change without prior notice.
           Half portions available for select items as indicated.
         </p>
