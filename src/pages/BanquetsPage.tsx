@@ -508,28 +508,31 @@ export const BanquetsPage: React.FC = () => {
 
   return (
     <div className="pt-24 md:pt-32 pb-24 min-h-screen relative">
-      {/* Sexy Marquee Banner */}
-      <div 
-        onClick={() => {
-          const element = document.getElementById('outdoor-catering');
-          if (element) {
-            const y = element.getBoundingClientRect().top + window.scrollY - 100;
-            window.scrollTo({ top: y, behavior: 'smooth' });
-          }
-        }}
-        className="w-full bg-gradient-to-r from-primary via-[#ff8c00] to-primary bg-[length:200%_auto] text-white py-3.5 cursor-pointer shadow-[0_4px_20px_rgba(219,68,55,0.3)] relative z-20 overflow-hidden group border-y border-white/20 mb-8 sm:mb-12 hover:shadow-[0_4px_25px_rgba(219,68,55,0.5)] transition-all duration-300"
-      >
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20 mix-blend-overlay"></div>
-        <div className="flex w-[200%] animate-marquee group-hover:[animation-play-state:paused] items-center">
-          {[1, 2, 3, 4].map((i) => (
-            <span key={i} className="text-sm md:text-base font-bold tracking-widest mx-6 flex items-center gap-3 whitespace-nowrap drop-shadow-md">
-              <Sparkles className="w-5 h-5 text-yellow-300 animate-pulse" /> 
-              PREMIUM OUTDOOR CATERING SERVICES AVAILABLE NOW
-              <span className="w-1.5 h-1.5 rounded-full bg-white mx-1" />
-              <span className="underline underline-offset-4 decoration-white/60 hover:text-yellow-200 transition-colors">CLICK TO BOOK</span>
+      {/* Elegant Catering Announcement */}
+      <div className="px-4 sm:px-6 lg:px-8 mb-12 flex justify-center relative z-20">
+        <button
+          onClick={() => {
+            const element = document.getElementById('outdoor-catering');
+            if (element) {
+              const y = element.getBoundingClientRect().top + window.scrollY - 100;
+              window.scrollTo({ top: y, behavior: 'smooth' });
+            }
+          }}
+          className="group relative inline-flex items-center justify-center gap-3 px-6 py-3 sm:px-8 sm:py-4 bg-secondary text-white rounded-full overflow-hidden shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/30 border border-white/5"
+        >
+          {/* Subtle glow border pulse */}
+          <div className="absolute inset-[-1px] rounded-full border border-primary/40 animate-pulse pointer-events-none"></div>
+          
+          <Sparkles className="w-5 h-5 text-accent" />
+          <span className="font-heading font-semibold text-sm sm:text-base tracking-wide flex items-center gap-2">
+            Discover Our Premium Outdoor Catering
+            <span className="hidden sm:inline w-1.5 h-1.5 rounded-full bg-white/30 mx-2"></span>
+            <span className="text-accent group-hover:text-white transition-colors underline decoration-accent/50 underline-offset-4 hidden sm:inline">
+              Click to Explore
             </span>
-          ))}
-        </div>
+          </span>
+          <ChevronDown className="w-5 h-5 text-accent group-hover:translate-y-1 transition-transform" />
+        </button>
       </div>
 
       {/* Background patterns */}
