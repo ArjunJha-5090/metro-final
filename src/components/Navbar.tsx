@@ -120,22 +120,8 @@ export const Navbar: React.FC = () => {
           className="lg:hidden fixed inset-0 z-[90] bg-white flex flex-col"
           onClick={(e) => { if (e.target === e.currentTarget) setIsMobileMenuOpen(false); }}
         >
-          {/* Header in overlay */}
-          <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-orange-100">
-            <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
-              <img
-                src="/assets/images/logo-transparent.png"
-                alt="Metro Food Court"
-                className="h-14 w-auto object-contain"
-              />
-            </Link>
-            <button
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="w-10 h-10 flex items-center justify-center rounded-xl bg-orange-50 border border-orange-200 text-secondary"
-            >
-              <X className="w-5 h-5" strokeWidth={2.5} />
-            </button>
-          </div>
+          {/* Spacer so nav links start below the floating logo/hamburger bar */}
+          <div className="h-20" />
 
           {/* Nav links */}
           <nav className="flex-1 overflow-y-auto px-6 py-6 flex flex-col gap-3">
