@@ -40,7 +40,7 @@ function App() {
       <div className="font-sans text-text antialiased min-h-screen flex flex-col">
         <Navbar />
 
-        <main className="flex-grow relative">
+        <main className="flex-grow relative pt-[70px] lg:pt-0">
           <div className="fixed top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none -z-10" />
           <div className="fixed top-[40%] left-[-200px] w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px] pointer-events-none -z-10" />
           <div className="fixed bottom-[-100px] right-[20%] w-[400px] h-[400px] bg-orange-500/5 rounded-full blur-[100px] pointer-events-none -z-10" />
