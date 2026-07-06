@@ -51,7 +51,8 @@ export const Navbar: React.FC = () => {
   const transformClass = isVisible ? 'translate-y-0' : '-translate-y-full';
 
   return (
-    <header className={`fixed w-full top-0 z-50 transition-transform duration-300 ${headerBg} ${transformClass} py-2`}>
+    <>
+      <header className={`fixed w-full top-0 z-50 transition-transform duration-300 ${headerBg} ${transformClass} py-2`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
@@ -93,6 +94,7 @@ export const Navbar: React.FC = () => {
           </div>
         </div>
       </div>
+      </header>
 
       {/* Mobile menu overlay */}
       {isMobileMenuOpen && (
@@ -111,6 +113,6 @@ export const Navbar: React.FC = () => {
           </div>
         </div>
       )}
-    </header>
+    </>
   );
 };
