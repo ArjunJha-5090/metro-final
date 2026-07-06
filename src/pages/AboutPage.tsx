@@ -106,8 +106,8 @@ export const AboutPage: React.FC = () => {
               <CornerFiligree className="top-0 left-0" />
               <CornerFiligree className="top-0 right-0 scale-x-[-1]" />
               <img 
-                src="https://loremflickr.com/1974/1000/chef,cooking?lock=106" 
-                alt="Traditional Indian Spices and Flavours" 
+                src="/assets/images/about-kheer.png" 
+                alt="Traditional Indian Kheer in Clay Pot" 
                 className="w-full h-full object-cover rounded-t-[9.5rem] rounded-b-sm group-hover:scale-[1.03] transition-transform duration-1000 ease-out"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-transparent to-transparent opacity-60 rounded-t-[9.5rem]"></div>
