@@ -14,7 +14,7 @@ const reviews = [
     name: 'Priya Patel',
     photo: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
     rating: 5,
-    text: 'Metro Food Court has the best ambiance in Kankarbagh. We hosted my son\'s birthday party at the Banquet hall and the catering was flawless. Highly recommended!'
+    text: 'Metro Food Court has the best ambiance near New Bypass. We hosted my son\'s birthday party at the Banquet hall and the catering was flawless. Highly recommended!'
   },
   {
     name: 'Amit Kumar',

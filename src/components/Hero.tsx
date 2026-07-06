@@ -25,14 +25,14 @@ export const Hero: React.FC = () => {
           <FadeIn direction="up" delay={200}>
             <h1 className="text-[2.5rem] leading-[1] sm:text-6xl lg:text-7xl xl:text-8xl font-heading text-secondary mb-4 sm:mb-6 uppercase">
               Metro Food Court <br />
-              <span className="text-primary" style={{ textShadow: '2px 2px 0px #111111' }}>Kankarbagh,</span><br />
+              <span className="text-primary" style={{ textShadow: '2px 2px 0px #111111' }}>New Bypass,</span><br />
               Patna
             </h1>
           </FadeIn>
           
           <FadeIn direction="up" delay={300}>
             <p className="text-base sm:text-xl text-secondary/80 font-sans max-w-2xl mx-auto lg:mx-0 mb-8 sm:mb-10 font-bold leading-relaxed">
-              Metro Food Court is a quick-bites restaurant in Kankarbagh, Patna, serving North Indian, Chinese, and a full range of rolls — from mutton kaathi rolls to paneer and chicken tikka rolls. Open for dine-in, takeaway, and delivery at Gyan Ganga Trade Centre.
+              Metro Food Court is a quick-bites restaurant at New Bypass, Patna, serving North Indian, Chinese, and a full range of rolls — from mutton kaathi rolls to paneer and chicken tikka rolls. Open for dine-in, takeaway, and delivery at Gyan Ganga Trade Centre.
             </p>
           </FadeIn>
       

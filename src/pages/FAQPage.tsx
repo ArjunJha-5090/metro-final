@@ -10,7 +10,7 @@ const faqSchema = {
       "name": "Where is Metro Food Court located?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Metro Food Court is located at Gyan Ganga Trade Centre in Kankarbagh, Patna."
+        "text": "Metro Food Court is located at Gyan Ganga Trade Centre at New Bypass, Patna."
       }
     },
     {
@@ -23,10 +23,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Does Metro Food Court deliver in Kankarbagh?",
+      "name": "Does Metro Food Court deliver in New Bypass?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, Metro Food Court delivers across Kankarbagh via Zomato and Swiggy."
+        "text": "Yes, Metro Food Court delivers across New Bypass via Zomato and Swiggy."
       }
     },
     {
