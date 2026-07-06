@@ -101,17 +101,29 @@ export const Navbar: React.FC = () => {
           />
         </Link>
 
-        {/* Hamburger — top right */}
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
-          className="pointer-events-auto mt-1 w-11 h-11 flex items-center justify-center rounded-xl bg-white/80 backdrop-blur-sm border border-orange-200 text-secondary shadow-md active:scale-95 transition-all duration-150"
-        >
-          {isMobileMenuOpen
-            ? <X className="w-6 h-6" strokeWidth={2.5} />
-            : <Menu className="w-6 h-6" strokeWidth={2.5} />
-          }
-        </button>
+        {/* Right Controls — View Menu + Hamburger */}
+        <div className="pointer-events-auto mt-1 flex items-center gap-2">
+          {/* View Menu Button */}
+          <Link
+            to="/menu"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="h-11 flex items-center justify-center px-5 rounded-full bg-gradient-to-r from-primary to-orange-500 text-white font-heading font-bold text-sm tracking-wide shadow-lg shadow-primary/30 active:scale-95 transition-all duration-200 border border-white/20"
+          >
+            Menu
+          </Link>
+
+          {/* Hamburger */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+            className="w-11 h-11 flex items-center justify-center rounded-full bg-white/90 backdrop-blur-md border border-orange-200 text-secondary shadow-md active:scale-95 transition-all duration-150"
+          >
+            {isMobileMenuOpen
+              ? <X className="w-6 h-6" strokeWidth={2.5} />
+              : <Menu className="w-6 h-6" strokeWidth={2.5} />
+            }
+          </button>
+        </div>
       </div>
 
       {/* ── Mobile Full-Screen Menu Overlay ── */}
