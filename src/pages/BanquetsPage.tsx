@@ -611,6 +611,42 @@ export const BanquetsPage: React.FC = () => {
           })}
         </div>
 
+        {/* Outdoor Catering Service */}
+        <div className="mt-20 bg-gradient-to-br from-primary to-[#ff8c00] rounded-[2.5rem] shadow-2xl p-8 md:p-14 relative overflow-hidden flex flex-col lg:flex-row items-center justify-between text-white border-4 border-white">
+          <div className="absolute inset-0 opacity-15 bg-[url('https://www.transparenttextures.com/patterns/arabesque.png')] pointer-events-none" />
+          
+          <div className="relative z-10 lg:w-2/3 mb-10 lg:mb-0 text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-xs font-bold tracking-widest uppercase mb-6 shadow-sm">
+              <Sparkles className="w-4 h-4 text-white" />
+              Premium Service
+            </div>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-white drop-shadow-md leading-tight">
+              Outdoor Catering Services
+            </h2>
+            <p className="text-white/95 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
+              Bring the Metro Food Court experience to your chosen venue! From destination weddings to corporate galas and private parties, we provide complete luxury catering setups, interactive live counters, and impeccable hospitality anywhere you desire.
+            </p>
+          </div>
+
+          <div className="relative z-10 lg:w-1/3 flex flex-col gap-4 w-full sm:w-auto">
+            <a
+              href="https://api.whatsapp.com/send/?phone=916287601908&text=Hi%2C%20I%20want%20to%20know%20more%20about%20your%20Outdoor%20Catering%20Services."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-white text-secondary hover:bg-orange-50 font-bold text-lg transition-all shadow-[0_8px_30px_rgba(0,0,0,0.12)] active:scale-95"
+            >
+              <MessageCircle className="w-6 h-6 text-[#25D366] group-hover:scale-110 transition-transform" />
+              WhatsApp Us
+            </a>
+            <a 
+              href="tel:+916287601908" 
+              className="flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-secondary text-white hover:bg-secondary/90 font-bold text-lg transition-all shadow-[0_8px_30px_rgba(0,0,0,0.2)] border border-white/10 active:scale-95"
+            >
+              <Phone className="w-6 h-6" />
+              Call 6287601908
+            </a>
+          </div>
+        </div>
         {/* Booking Call to Action */}
         <div className="mt-20 text-center bg-white rounded-3xl shadow-xl p-12 border border-accent/15 relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/arabesque.png')] pointer-events-none" />

@@ -76,6 +76,18 @@ export const Footer: React.FC = () => {
                 <p className="font-medium text-white mb-1">WhatsApp</p>
                 <a href="https://api.whatsapp.com/send/?phone=916287601908" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">Chat with us</a>
               </li>
+              <li className="pt-2 border-t border-white/10 mt-2">
+                <p className="font-medium text-accent mb-1 text-sm uppercase tracking-wide">Outdoor Catering</p>
+                <div className="flex flex-col gap-1 mt-1">
+                  <a href="https://api.whatsapp.com/send/?phone=916287601908&text=Hi%2C%20I%20want%20to%20know%20more%20about%20your%20Outdoor%20Catering%20Services." target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2 text-white/80">
+                    <MessageCircle className="w-4 h-4 text-[#25D366]" /> 
+                    WhatsApp for catering
+                  </a>
+                  <a href="tel:+916287601908" className="hover:text-white transition-colors text-white/80 mt-1">
+                    Or call us at 6287601908
+                  </a>
+                </div>
+              </li>
             </ul>
           </div>
 
