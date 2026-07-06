@@ -507,11 +507,35 @@ export const BanquetsPage: React.FC = () => {
   const currentMenu = activeTab === 'veg' ? vegMenu : nonVegMenu;
 
   return (
-    <div className="pt-32 md:pt-40 pb-24 min-h-screen relative">
+    <div className="pt-24 md:pt-32 pb-24 min-h-screen relative">
+      {/* Sexy Marquee Banner */}
+      <div 
+        onClick={() => {
+          const element = document.getElementById('outdoor-catering');
+          if (element) {
+            const y = element.getBoundingClientRect().top + window.scrollY - 100;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }
+        }}
+        className="w-full bg-gradient-to-r from-primary via-[#ff8c00] to-primary bg-[length:200%_auto] text-white py-3.5 cursor-pointer shadow-[0_4px_20px_rgba(219,68,55,0.3)] relative z-20 overflow-hidden group border-y border-white/20 mb-8 sm:mb-12 hover:shadow-[0_4px_25px_rgba(219,68,55,0.5)] transition-all duration-300"
+      >
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20 mix-blend-overlay"></div>
+        <div className="flex w-[200%] animate-marquee group-hover:[animation-play-state:paused] items-center">
+          {[1, 2, 3, 4].map((i) => (
+            <span key={i} className="text-sm md:text-base font-bold tracking-widest mx-6 flex items-center gap-3 whitespace-nowrap drop-shadow-md">
+              <Sparkles className="w-5 h-5 text-yellow-300 animate-pulse" /> 
+              PREMIUM OUTDOOR CATERING SERVICES AVAILABLE NOW
+              <span className="w-1.5 h-1.5 rounded-full bg-white mx-1" />
+              <span className="underline underline-offset-4 decoration-white/60 hover:text-yellow-200 transition-colors">CLICK TO BOOK</span>
+            </span>
+          ))}
+        </div>
+      </div>
+
       {/* Background patterns */}
-      <div className="absolute inset-0 opacity-[0.02] bg-[url('https://www.transparenttextures.com/patterns/arabesque.png')] pointer-events-none" />
+      <div className="absolute inset-0 opacity-[0.02] bg-[url('https://www.transparenttextures.com/patterns/arabesque.png')] pointer-events-none mt-20" />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-2">
         
         {/* Page Hero Section */}
         <div className="text-center mb-16 flex flex-col items-center">
@@ -612,7 +636,7 @@ export const BanquetsPage: React.FC = () => {
         </div>
 
         {/* Outdoor Catering Service */}
-        <div className="mt-20 bg-gradient-to-br from-primary to-[#ff8c00] rounded-[2.5rem] shadow-2xl p-8 md:p-14 relative overflow-hidden flex flex-col lg:flex-row items-center justify-between text-white border-4 border-white">
+        <div id="outdoor-catering" className="mt-20 bg-gradient-to-br from-primary to-[#ff8c00] rounded-[2.5rem] shadow-2xl p-8 md:p-14 relative overflow-hidden flex flex-col lg:flex-row items-center justify-between text-white border-4 border-white scroll-mt-32">
           <div className="absolute inset-0 opacity-15 bg-[url('https://www.transparenttextures.com/patterns/arabesque.png')] pointer-events-none" />
           
           <div className="relative z-10 lg:w-2/3 mb-10 lg:mb-0 text-center lg:text-left">
